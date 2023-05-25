@@ -370,11 +370,14 @@ if(document.querySelectorAll('.credit__form').length) {
   link_Feilds(fields)
   let fieldsRange = document.querySelectorAll('[range-name]')
   link_Feilds_Range(fieldsRange)
+  //новый ползунок связывание
   let jsRangeSlider = document.querySelectorAll('.js-range-slider')
   for(let i = 0; i < jsRangeSlider.length; i++) {
     $(jsRangeSlider[i]).ionRangeSlider({
       grid: false,
       skin: "round",
+      hide_min_max: true,
+      hide_from_to: true,
       onChange: function (data) {
         let id = $(jsRangeSlider[i]).attr('range-name')
         let field = document.querySelector('[range-for="'+id+'"]')
@@ -407,9 +410,11 @@ function link_Feilds(fields) {
     
     fields[i].addEventListener('input', function() {
       let number = getNumber(fields[i].value)
-      console.log(range)
-      range.data.value = number
-      ChangeRange(range)
+      console.log($(range))
+      $(range).data("ionRangeSlider").update({
+        from: number,
+      });
+      // ChangeRange(range)
       calc()
     })
     fields[i].addEventListener('click', function() {
@@ -423,7 +428,6 @@ function link_Feilds_Range(range) {
     let field = document.querySelector('[range-for="'+id+'"]')
     let suffix = range[i].getAttribute('suffix')
     range[i].addEventListener('input', function() {
-      console.log('test')
       field.value = numberWithCommas(range[i].value) + ' ' + suffix
       calc()
     })
@@ -469,14 +473,12 @@ function calc() {
   let price = document.querySelector('.car__price-now').innerHTML
   price =  parseInt(price.split(' ').join(''))
   let months = document.querySelector('[range-for="months"').value
-  // let months = document.querySelector('[range-name="months"').value
   months =  parseInt(months)
   let procents = document.querySelector('.credit-year-procent').innerHTML
   procents =  parseFloat(procents.split(' ').join(''))
-  console.log(procents)
   procents = (procents / 100) / 12
   let firstPay = document.querySelector('[range-name="deposit"').value
-  price = price - firstPay
+  price = price - (price / 100 * firstPay)
 
   let res =  (price * procents) / (1 - Math.pow((1 + procents),(-months)))
   res = parseInt(res)
@@ -1155,17 +1157,17 @@ function addYears(target) {
 
 //mileage__content open hidden 
 
-if(document.querySelectorAll('.mileage__item').length) {
-  let mileage = document.querySelector('.mileage')
-  let mileageContentHidden = mileage.querySelectorAll('.mileage__item')
-  let showMoreBtn = mileage.querySelector('.btn_dropdown')
-  showMoreBtn.onclick = function() {
-    this.classList.add('hidden')
-    for (let i = 0; i < mileageContentHidden.length; i++) {
-      mileageContentHidden[i].classList.remove('hidden')
-    }
-  }
-}
+// if(document.querySelectorAll('.mileage__item').length) {
+//   let mileage = document.querySelector('.mileage')
+//   let mileageContentHidden = mileage.querySelectorAll('.mileage__item')
+//   let showMoreBtn = mileage.querySelector('.btn_dropdown')
+//   showMoreBtn.onclick = function() {
+//     this.classList.add('hidden')
+//     for (let i = 0; i < mileageContentHidden.length; i++) {
+//       mileageContentHidden[i].classList.remove('hidden')
+//     }
+//   }
+// }
 
 
 //show phone by blick btns
@@ -1280,7 +1282,6 @@ if(document.querySelectorAll('.additionally').length) {
           }
           case 'ads': {
             if(currentList.querySelector('[name$="calc"]') !== null) {
-              console.log('test')
               currentList.querySelector('[name$="calc"]').classList.remove('hidden')
             }
 
@@ -1501,9 +1502,51 @@ if(document.querySelectorAll('.wrapper_stock').length) {
 
 
 // раскрытие текста в футере по клику на кнопку подробнее
-let footerBtnMore = document.querySelector('.footer__dics-more-btn')
-footerBtnMore.onclick = function() {
-  this.classList.add('hidden')
-  $('.footer__dics-hidden').slideToggle(400);
+if(document.querySelectorAll('.footer__dics-more-btn').length) {
+  let footerBtnMore = document.querySelector('.footer__dics-more-btn')
+  footerBtnMore.onclick = function() {
+    this.classList.add('hidden')
+    $('.footer__dics-hidden').slideToggle(400);
+  }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------
+
+
+//ползунок js-range-slider
+
+let jsRangeSlider = document.querySelectorAll('.js-range-slider')
+if(document.querySelectorAll('.js-range-slider').length) {
+  for(let i = 0; i < jsRangeSlider.length; i++) {
+    $(jsRangeSlider[i]).ionRangeSlider({
+      grid: false,
+      skin: "round",
+      hide_min_max: true,
+      hide_from_to: true,
+    })
+  }
+}

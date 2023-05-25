@@ -14,7 +14,7 @@
             align-items: center;
             gap: 11px;
             padding-bottom: 20px;
-            padding-top: 20px;
+            padding-top: 33px;
             @media(max-width:1023px) {
               padding-bottom: 10px;
               padding-top: 10px;
@@ -55,7 +55,7 @@
             line-height: 19px;
             color: #7E7E7E;
             border-radius: 5px;
-            padding: 13px 16px;
+            padding: 13px 14px;
             white-space: nowrap;
             transition: .2s;
             @media(max-width:1199px) {
@@ -71,6 +71,12 @@
 		}
 
 		&__phone-btn {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15.7945px;
+      line-height: 19px;
+      color: #FFFFFF;
             @media(max-width:1199px) {
                 padding: 16px 12px;
             }

@@ -1,0 +1,53 @@
+.selection-w {
+    padding-top: 56px;
+}
+.selection {
+    background: #E6EFFF;
+    border-radius: 10px;
+    padding: 35px;
+    display: flex;
+    gap: 10px;
+    &__content {
+        font-family: 'Rubik';
+    }
+
+    &__title {
+        & h4 {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 128.8%;
+            letter-spacing: 0.055em;
+            text-transform: uppercase;
+        }
+    }
+
+    &__range {
+        margin-top: 29px;
+    }
+
+    &__subtitle {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 0.02em;
+    }
+
+    &__range-value {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.09em;
+    }
+
+    &__type {
+    }
+
+    &__selector {
+    }
+
+    &__pic {
+        & img {
+            width: 100%;
+        }
+    }
+}
