@@ -4,11 +4,14 @@
 .selection {
     background: #E6EFFF;
     border-radius: 10px;
-    padding: 35px;
+    padding: 35px 35px 32px 35px;
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
+    gap: 40px;
     &__content {
         font-family: 'Rubik';
+        flex: 1;
+        max-width: 425px;
     }
 
     &__title {
@@ -23,13 +26,39 @@
 
     &__range {
         margin-top: 29px;
+        .irs--round {
+            height: 2px;
+        }
+        .irs--round .irs-line {
+            top: 0px;
+            height: 9px;
+            border-radius: 4px;
+            background: #FFFFFF;
+            border-radius: 31.785px;
+        }
+        .irs--round .irs-handle {
+            background: #FFFFFF;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 9.98956px;
+            height: 20px;
+            width: 8px;
+            border: none;
+        }
+        .irs--round .irs-bar {
+            top: 0px;
+            height: 9px;
+            background-color: #FFFFFF;
+            border-radius: 4px;
+        }
     }
-
+    &__range-input {
+    }
     &__subtitle {
         font-weight: 500;
         font-size: 16px;
         line-height: 19px;
         letter-spacing: 0.02em;
+        margin-bottom: 16px;
     }
 
     &__range-value {
@@ -37,17 +66,27 @@
         font-size: 14px;
         line-height: 17px;
         letter-spacing: 0.09em;
+        margin-top: 22px;
     }
 
     &__type {
+        margin-top: 20px;
+        & .selection__subtitle {
+            margin-bottom: 10px;
+        }
     }
 
     &__selector {
     }
 
     &__pic {
+        padding-right: 35px;
         & img {
             width: 100%;
         }
+    }
+    &__btn-pick {
+        margin-top: 19px;
+        padding: 15px 56px;
     }
 }

@@ -410,7 +410,6 @@ function link_Feilds(fields) {
     
     fields[i].addEventListener('input', function() {
       let number = getNumber(fields[i].value)
-      console.log($(range))
       $(range).data("ionRangeSlider").update({
         from: number,
       });
@@ -1538,7 +1537,6 @@ if(document.querySelectorAll('.footer__dics-more-btn').length) {
 
 
 //ползунок js-range-slider
-
 let jsRangeSlider = document.querySelectorAll('.js-range-slider')
 if(document.querySelectorAll('.js-range-slider').length) {
   for(let i = 0; i < jsRangeSlider.length; i++) {
@@ -1547,6 +1545,40 @@ if(document.querySelectorAll('.js-range-slider').length) {
       skin: "round",
       hide_min_max: true,
       hide_from_to: true,
+    })
+  }
+}
+
+//selector список
+if(document.querySelectorAll('.selector')) {
+  let selector = document.querySelectorAll('.selector')
+  for(let i = 0; i < selector.length; i++) {
+    removeClickLabel(selector[i])
+    selector[i].addEventListener('click', function(e) {
+      let target = e.target
+      let subTitle = selector[i].querySelector('.selector__subtitle')
+      //open close
+      if(target.classList.contains('selector__subtitle')) {
+        this.classList.toggle('active')
+      }
+      //close 
+      if(target.classList.contains('close')) {
+        this.classList.remove('active')
+      }
+      //select
+      if(target.classList.contains('filter__custom-input') || target.classList.contains('selector__list-item') || target.tagName == "SPAN") {
+        subTitle.innerHTML = target.closest('.filter__item-checkbox').querySelector('span').innerHTML
+      }
+    })
+  }
+}
+
+function removeClickLabel(list) {
+  let labels = list.querySelectorAll('label')
+  for (let i = 0; i < labels.length; i++) {
+    labels[i].addEventListener('click', function(e) {
+      labels[i].querySelector('input').checked = !labels[i].querySelector('input').checked
+      e.preventDefault()
     })
   }
 }

@@ -1,5 +1,10 @@
 .selector {
-
+    position: relative;
+    &.active {
+        & .selector__content {
+            display: block;
+        }
+    }
     &__subtitle {
         font-family: 'Rubik';
         font-weight: 400;
@@ -9,10 +14,73 @@
         background: #FFFFFF;
         border: 1px solid #D6D6D6;
         border-radius: 10px;
+        padding: 13px;
+        cursor: pointer;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            background: url(../img/icons/arrow_selector.svg) 0 0 no-repeat;
+            background-size: cover;
+            width: 13px;
+            height: 8px;
+            right: 10px;
+            top: 17px;
+            cursor: pointer;
+            transition: .2s;
+        }
     }
-
-    &__list {
+    &__content {
         display: none;
+        position: absolute;
+        background: #FFFFFF;
+        width: 100%;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.08);
+        border-radius: 5px;
+        top: calc(100% - 0px);
+        z-index: 5;
+        transition: 0.4s;
+        padding: 40px 0px 2px 13px;
+        left: 0;
+    }
+    &__list {
+        height: auto;
+        max-height: 200px;
+        overflow: auto;
+        padding-right: 13px;
+        /* Firefox */
+        scrollbar-width: thin;
+        scrollbar-color: #2C64EE #F0F1F5;
+        /* Chrome, Edge and Safari */
+        &::-webkit-scrollbar {
+            width: 9px;
+            width: 9px;
+        }
+        &::-webkit-scrollbar-track {
+            border-radius: 5px;
+            background-color: #F0F1F5;
+        }
+        
+        &::-webkit-scrollbar-track:hover {
+            background-color: #F0F1F5;
+        }
+        
+        &::-webkit-scrollbar-track:active {
+            background-color: #f0f1f5;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: #2C64EE;
+        }
+        
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: #2C64EE;
+        }
+        
+        &::-webkit-scrollbar-thumb:active {
+            background-color: #2C64EE;
+        }
     }
 
     &__list-item {

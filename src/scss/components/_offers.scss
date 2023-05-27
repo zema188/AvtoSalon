@@ -1,0 +1,128 @@
+.offers {
+    padding-top: 56px;
+    &__list {
+        padding-top: 23px;
+    }
+
+    &__card {
+        display: flex;
+        justify-content: space-between;
+        padding: 28px;
+        background: #FFFFFF;
+        border-radius: 5px;
+        gap: 16px;
+        transition: .2s;
+        cursor: pointer;
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+        &:hover {
+            box-shadow: 1px 1px 6px 8px rgba(39, 39, 39, 0.04);
+        }
+    }
+
+    &__card-pic {
+        margin-right: 13px;
+        position: relative;
+    }
+    &__card-desc-list {
+        display: flex;
+        padding-top: 15px;
+        gap: 27px;
+    }
+    &__card-info {
+        display: flex;
+        flex: 1;
+        max-width: 448px;
+        gap: 27px;
+        justify-content: space-between;
+    }
+    &__card-discount {
+        position: absolute;
+        width: 41.16px;
+        height: 41.16px;
+        background: #2C64EE;
+        font-family: 'Rubik';
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        bottom: 0px;
+        left: 19px;
+    }
+
+    &__card-desc {
+    }
+
+    &__card-lead {
+        font-family: 'Rubik';
+        font-weight: 300;
+        line-height: 19px;
+        color: #272727;
+        font-size: 16px;
+        &:not(:first-child) {
+            margin-top: 8px;
+        }
+        &_engine {
+            & span {
+                white-space: nowrap;
+            }
+        }
+        & span {
+            font-weight: 500;
+        }
+    }
+
+    &__card-prices {
+        font-family: 'Rubik';
+        padding-top: 22px;
+    }
+
+    &__card-price-old {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 24px;
+        color: #A0A0A0;
+        white-space: nowrap;
+    }
+
+    &__card-price-now {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 28px;
+        color: #E82B2B;
+        white-space: nowrap;
+        margin-top: 6px;
+    }
+
+    &__card-benefit {
+        font-family: 'Rubik';
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 24px;
+        width: min-content;
+        padding-top: 22px;
+        & b {
+            font-family: 'Rubik';
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 28px;
+            white-space: nowrap;
+            margin-top: 6px;
+            display: block;
+        }
+    }
+
+    &__card-btn {
+        width: 100%;
+        max-width: 121px;
+        border-radius: 3.58543px;
+        margin-top: 31px;
+        padding: 11px 19px;
+    }
+}

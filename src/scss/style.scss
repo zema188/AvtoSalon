@@ -227,11 +227,14 @@ body.disable-scroll {
   justify-content: center;
   align-items: center;
   padding: 17px 5px;
-  border-radius: 8.7747px;
+  border-radius: 10px;
   transition: .2s;
-  font-family: 'Rubik';
-  font-size: 18px;
-  line-height: 21px;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14.5303px;
+  line-height: 17px;
+  letter-spacing: 0.035em;
   color: #FFFFFF;
   position: relative;
   height: fit-content;
@@ -289,8 +292,9 @@ body.disable-scroll {
       }
     }
     &_phone {
-      gap: 9px;
+      gap: 8px;
       padding: 15px 26px;
+      font-size: 14.7945px;
       &::before {
         background: url(../img/icons/phone.svg) 0 0 no-repeat;
         background-size: cover;
@@ -444,22 +448,91 @@ h3 {
 }
 .close {
   cursor: pointer;
+  background: url(../img/icons/close_grey.svg) 0 0 no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  top: 10px;
+  right: 7px;
 }
 
 
 .custom-w  {
   display: flex;
   gap: 4px;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  border-bottom: 0.2px solid #bfbfbf;
+  padding-bottom: 16px;
+  & span {
+    font-weight: 400;
+  }
   &:hover {
     & .filter__custom-input {
       border: 1.2px solid #2C64EE;
     }
   }
 }
+
 .custom-w input {
   display: none;
+
 }
 
+.filter__custom-input {
+  position: relative;
+  display: block;
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  border: 1px solid #D9D9D9;
+  border-radius: 2px;
+  transition: .2s;
+}
+.filter__custom-input_radio {
+  border-radius: 50%;
+}
+.filter__custom-input::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 9px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transition: 0.2s;
+  background: url(../img/icons/checkbox.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.filter__custom-input_radio::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.2s;
+  background: #272727;
+}
+.custom-w input:checked + .filter__custom-input::before {
+  opacity: 1;
+
+}
+
+.custom-w input:checked + .filter__custom-input {
+  background: #F1F5FF;
+  border: 1.2px solid #2C64EE;
+}
+
+.filter__custom-input {
+  min-width: 18px;
+  min-height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+}
 
 .popup {
   display: none;
@@ -601,4 +674,7 @@ h3 {
   height: 4px;
   background-color: #006cfa;
   border-radius: 4px;
+}
+.price-old {
+  text-decoration: line-through;
 }
