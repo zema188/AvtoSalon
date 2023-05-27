@@ -1,18 +1,16 @@
 .header_car{
   position: relative;
-  & .header__logo {
-    &::before {
-      @media(max-width:1023px) {
-        display: none;
-      }
-    }
-  }
   & .header__content {
     @media(max-width:767px) {
       padding-top: 14px;
     }
     @media(max-width:539px) {
       padding-top: 6px;
+    }
+  }
+  & .header__logo-pc {
+    @media(max-width:1023px) {
+      display: none;
     }
   }
   &.fixed {
@@ -142,11 +140,6 @@
 }
 
 .header__logo {
-  &::before {
-    @media(max-width:1023px) {
-      // display: none;
-    }
-  }
   & img {
     display: none;
     @media(max-width:1023px) {
@@ -155,15 +148,15 @@
   }
 }
 .header__content-action {
-  display: flex;
   align-items: center;
   gap: 10px;
-}
-.header__back_mobile {
   display: none;
   @media(max-width:1023px) {
-    display: block;
+    display: flex;
   }
+}
+.header__back_mobile {
+
 }
 .car__discount_mobile {
   @media(max-width:1023px) {

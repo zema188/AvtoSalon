@@ -1,0 +1,167 @@
+.car {
+    padding-top: 29px;
+    &__name {
+        font-family: 'Rubik';
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    &__content {
+        display: flex;
+        padding-top: 58px;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__option {
+        flex: 0 0 62%;
+    }
+
+    &__preview-pic {
+        padding: 0px 15px 5px 42px;
+        & img {
+            width: 100%;
+        }
+    }
+
+    &__color {
+    }
+
+    &__color-subtitle {
+        font-family: 'Rubik';
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    &__color-name {
+        font-weight: 500;
+    }
+
+    &__color-list {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 15px;
+        padding-left: 4px;
+    }
+
+    &__color-item {
+        width: 62px;
+        height: 26px;
+        background: #AAA895;
+        border: 1.5px solid #FFFFFF;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.54);
+        -webkit-transform: skew(-22deg);
+        transform: skew(-22deg);
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    &__info {
+        box-shadow: 2px 2px 4px 6px rgba(39, 39, 39, 0.06);
+        border-radius: 5px;
+        padding: 35px 20px 20px 36px;
+        height: fit-content;
+        max-width: 394px;
+        flex: 1;
+    }
+
+    &__info-brand {
+        font-family: 'Rubik';
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 31px;
+        display: flex;
+        gap: 9px;
+        align-items: center;
+        height: fit-content;
+    }
+
+    &__info-brand-pic {
+        display: flex;
+    }
+
+    &__info-brand-name {
+    }
+
+    &__info-price {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+        margin-top: 21px;
+    }
+
+    &__info-price-now {
+        font-family: 'Rubik';
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 36px;
+        white-space: nowrap;
+    }
+
+    &__info-btn-discount {
+        background: #EFEFF1;
+        border-radius: 3.77143px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 32px;
+        cursor: pointer;
+        & img {
+            transition: .2s;
+            transform: rotate(180deg);
+        }
+    }
+
+    &__info-price-old {
+        font-family: 'Roboto';
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 30px;
+        color: #A0A0A0;
+        white-space: nowrap;
+        margin-top: 18px;
+    }
+
+    &__info-btn-credit {
+        font-family: 'Rubik';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #FFFFFF;
+        background: #E82B2B;
+        border-radius: 10px;
+        margin-top: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 12px 10px;
+        width: 100%;
+        max-width: 322px;
+        & span {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+
+    &__info-lead {
+        font-family: 'Arial';
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: #8D8D8D;
+        margin-top: 9px;
+        max-width: 272px;
+        & a {
+            color: #8D8D8D;
+            text-decoration: underline;
+        }
+    }
+}

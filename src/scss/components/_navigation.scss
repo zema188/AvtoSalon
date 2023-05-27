@@ -1,0 +1,22 @@
+.navigation {
+    margin-top: 27px;
+    &__list {
+    }
+
+    &__list-item {
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #7E7E7E;
+        &:not(:last-child) {
+            &::after {
+                content: "/";
+            }
+        }
+        &:last-child {
+            color: #2C64EE;
+            text-transform: uppercase;
+        }
+    }
+}
