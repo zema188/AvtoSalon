@@ -77,13 +77,13 @@ window.addEventListener('resize', function(event){
 
     let popups = document.querySelectorAll('.popup')
     let credit = document.querySelector('.credit')
-    if(window.innerWidth >= 540) {
-      if(filter !== null) {
-        filter.classList.remove('popup')
-        bodyScrollLock.enableBodyScroll(filter);
-      }
-        // bodyNotFixed()
-    }
+    // if(window.innerWidth >= 540) {
+    //   if(filter !== null) {
+    //     filter.classList.remove('popup')
+    //     bodyScrollLock.enableBodyScroll(filter);
+    //   }
+    //     // bodyNotFixed()
+    // }
     if(window.innerWidth <=539 && credit !== null) {
       if(credit.classList.contains('credit_car'))
       credit.classList.add('popup')
@@ -116,23 +116,23 @@ window.addEventListener('resize', function(event){
         }
       }
     }
-    if(window.innerWidth <= 539) {
-      if(filter !== null && !filter.classList.contains('filter_catalog')) {
-        filter.classList.add('active')
-        filter.style.display = 'block'
-      }
-    }
+    // if(window.innerWidth <= 539) {
+    //   if(filter !== null && !filter.classList.contains('filter_catalog')) {
+    //     filter.classList.add('active')
+    //     filter.style.display = 'block'
+    //   }
+    // }
 })
-if(window.innerWidth <= 539 && (filter !== null)) {
-  if(!filter.classList.contains('filter_catalog')) {
-    filter.classList.add('active')
-  } else {
-    filter.classList.remove('active')
-    $( filter ).slideUp( "slow", function() {
-      // Animation complete.
-    });
-  }
-}
+// if(window.innerWidth <= 539 && (filter !== null)) {
+//   if(!filter.classList.contains('filter_catalog')) {
+//     filter.classList.add('active')
+//   } else {
+//     filter.classList.remove('active')
+//     $( filter ).slideUp( "slow", function() {
+//       // Animation complete.
+//     });
+//   }
+// }
 
 
 //preview-swiper
@@ -315,7 +315,6 @@ const advantagesSwiper = new Swiper('.advantages-swiper', {
 
 //parnters swiper 
 const partnersSwiper = new Swiper('.partners-swiper', {
-  slidesPerView: 3.5,
   speed: 400,
   spaceBetween: 14,
   breakpoints: {
@@ -324,7 +323,7 @@ const partnersSwiper = new Swiper('.partners-swiper', {
       spaceBetween: 14,
     },
     768: {
-      slidesPerView: 3.5,
+      slidesPerView: 3,
       spaceBetween: 14,
     },
   }

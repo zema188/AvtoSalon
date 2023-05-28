@@ -11,6 +11,7 @@
     }
     @media(max-width:539px) {
         padding-bottom: 10px;
+        padding-top: 10px;
     }
 		&__wrapper {
 		}
@@ -41,7 +42,7 @@
             }
             @media(max-width:539px) {
                 width: 100%;
-                padding: 37px 25px 12px 19px;
+                padding: 37px 25px 22px 19px;
                 justify-content: space-between;
             }
         }
@@ -153,6 +154,7 @@
                 @media(max-width:539px) {
                     border-radius: 4px;
                     height: 2px;
+                    width: 35px;
                 }
             }
             .swiper-pagination-bullet-active {
@@ -191,8 +193,14 @@
 }
 .mileage {
     padding-top: 60px;
+    @media(max-width:539px) {
+        padding-top: 26px;
+    }
     & h3 {
         padding-left: 20px;
+        @media(max-width:539px) {
+            padding-left: 0px;
+        }
     }
     &_without-photo {
         padding-top: 73px;
@@ -292,9 +300,6 @@
     }
     
     &_photos {
-        @media(max-width:539px) {
-            display: none;
-        }
     }
     &__content {
         display: flex;
@@ -302,6 +307,10 @@
         column-gap: 25px;
         row-gap: 17px;
         margin-top: 28px;
+        @media(max-width:539px) {
+            margin-top: 22px;
+            row-gap: 11px;
+        }
     }
     &__content_hidden {
         padding-top: 0px;
@@ -318,7 +327,8 @@
         background: #fff;
         box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 4%);
         border-radius: 5px;
-        padding: 3px 17px 10px 15px;
+        padding: 2px 17px 2px 15px;
+        height: 43px;
         @media(max-width:1199px) {
             flex: 0 0 calc(25% - 19px);
         }
@@ -327,6 +337,11 @@
         }
         @media(max-width:767px) {
             flex: 0 0 calc(50% - 13px);
+        }
+        @media(max-width:539px) {
+            box-shadow: none;
+            height: 23px;
+            padding: 0px;
         }
         &.hidden {
             display: none;
@@ -342,6 +357,9 @@
         width: 39px;
         display: flex;
         justify-content: center;
+        @media(max-width:539px) {
+            width: 31px;
+        }
     }
     &__item-side {
         display: flex;
@@ -353,12 +371,23 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 19px;
+        @media(max-width:539px) {
+            font-family: 'Rubik';
+            font-weight: 400;
+            font-size: 12.7719px;
+            line-height: 15px;
+            text-transform: uppercase;
+            color: #1F1A21;
+        }
     }
 
     &__item-number {
         font-size: 16px;
         line-height: 19px;
         color: #767678;
+        @media(max-width:539px) {
+            display: none;
+        }
     }
     &__footer {
         display: flex;
@@ -377,7 +406,13 @@
     &_dropdown {
     }
 }
-
+.filter-offers-title {
+    display: none;
+    @media(max-width:539px) {
+        margin-top: 36px;
+        display: block;
+    }
+}
 .filter {
     display: none;
     background: #FFFFFF;
@@ -387,7 +422,9 @@
     border-radius: 5px;
     box-shadow: 1px 1px 2px 6px rgba(0,0,0,.01);
     @media(max-width:539px) {
+        display: block;
         box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.06);
+        margin-top: 19px;
     }
     &.active {
         display: block;
@@ -651,6 +688,7 @@
         padding: 17px 33px;
         @media(max-width:539px) {
             padding: 17px 18px;
+            font-size: 13px;
         }
         &::after {
             content: "авто";
@@ -725,9 +763,12 @@
 
 
 
-
+.filter__item-checkbox-mark, .filter__item-checkbox-model, .filter__item-checkbox-generation {
+    border: none;
+    flex-direction: row;
+    justify-content: flex-start;
+}
 .filter {
-
     &__model-mark {
         display: flex;
     }

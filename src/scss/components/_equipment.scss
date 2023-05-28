@@ -1,0 +1,162 @@
+.equipment {
+    padding-top: 56px;
+    &__content {
+        padding-top: 26px;
+    }
+
+    &__list {
+    }
+
+    &__block {
+        border-radius: 5px;
+        &:not(:last-child) {
+            margin-bottom: 26px;
+        }
+    }
+
+    &__block-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #EBEBEB;
+        border-radius: 5px 5px 0px 0px;
+        padding: 18px 26px 18px 29px;
+    }
+
+    &__block-descs-list {
+        display: flex;
+        column-gap: 29px;
+        align-items: center;
+    }
+
+    &__block-desc {
+        font-family: 'Rubik';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        & b {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+    &__block-name {
+        margin-right: 19px;
+    }
+    &__block-date {
+        font-family: 'Rubik';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #272727;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 18px 25px 20px 27px;
+        gap: 10px;
+        &:nth-child(2) {
+            border-radius: 0 0 5px 5px;
+        }
+        &:nth-child(2n) {
+            background: #F5F5F5;
+        }
+    }
+
+    &__item-name {
+        font-family: 'Rubik';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex: 1;
+        max-width: 178px;
+        &::after {
+            content: "";
+            background: url(../img/icons/arrow_equipment.svg) 0 0 no-repeat;
+            display: block;
+            width: 18px;
+            height: 10px;
+            transition: .2s;
+        }
+    }
+    &__item-lead {
+        display: flex;
+        justify-content: space-between;
+        flex: 0 0 47%;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    &__item-benefit {
+        font-family: 'Rubik';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        & span {
+            display: block;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+    }
+
+    &__item-price {
+        font-family: 'Rubik';
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    &__item-price-old {
+        font-weight: 400;
+    }
+
+    &__item-price-now {
+        font-weight: 500;
+        color: #E82B2B;
+        margin-top: 5px;
+    }
+
+    &__item-btns {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    &__item-credit-btn {
+        padding: 12px 34px;
+        border-radius: 3.58543px;
+    }
+
+    &__item-btn {
+        background: #F5F5F5;
+        border: 1px solid #272727;
+        border-radius: 3.58543px;
+        font-family: 'Rubik';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        padding: 12px 27px;
+        text-transform: uppercase;
+        color: #272727;
+    }
+
+    &__item-reservation-btn {
+        padding: 10px 29px;
+    }
+
+    &__item-trade-btn {
+    }
+}
+.price-old {
+}
+.btn {
+
+    &_blue {
+    }
+}

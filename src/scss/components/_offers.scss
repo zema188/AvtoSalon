@@ -1,5 +1,19 @@
 .offers {
     padding-top: 56px;
+    @media(max-width:1023px) {
+        padding-left: 0px;
+        padding-right: 0px;
+        & h3 {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    @media(max-width:539px) {
+        padding-top: 0px;
+        & h3 {
+            display: none;
+        }
+    }
     &_car-page {
         & .offers__card {
             padding: 33px 14px 28px 17px;
@@ -17,7 +31,13 @@
         }
     }
     &__list {
-        padding-top: 23px;
+        margin-top: 23px;
+        @media(max-width:889px) {
+            background: #EFEFF1;
+        }
+        @media(max-width:539px) {
+            margin-top: 5px;
+        }
     }
 
     &__card {
@@ -25,15 +45,28 @@
         justify-content: space-between;
         padding: 28px;
         background: #FFFFFF;
-        border-radius: 5px;
         gap: 16px;
         transition: .2s;
         cursor: pointer;
+        @media(max-width:1023px) {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        @media(min-width:890px) {
+            border-radius: 5px;
+            &:hover {
+                box-shadow: 1px 1px 6px 8px rgba(39, 39, 39, 0.04);
+            }
+        }
+        @media(max-width:767px) {
+            padding: 8px 14px 21px 5px;
+            gap: 12px;
+        }
         &:not(:last-child) {
             margin-bottom: 8px;
-        }
-        &:hover {
-            box-shadow: 1px 1px 6px 8px rgba(39, 39, 39, 0.04);
+            @media(max-width:899px) {
+                margin-bottom: 15px;
+            }
         }
     }
 
@@ -42,11 +75,41 @@
         position: relative;
         flex: 0 0 100%;
         max-width: 171px;
+        height: fit-content;
+        @media(max-width:539px) {
+            flex: 0 0 41%;
+            margin-right: 0px;
+            margin-top: 13px;
+        }
+        & img {
+            width: 100%;
+        }
+    }
+    &__btn-more_mobile {
+        display: none;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #2C64EE;
+        border: 1px solid #2C64EE;
+        border-radius: 10px;
+        width: 100%;
+        @media(max-width:539px) {
+            display: flex;
+        }
     }
     &__card-desc-list {
         display: flex;
         padding-top: 15px;
         gap: 27px;
+        @media(max-width:1023px) {
+            flex: 1;
+            flex-direction: column;
+            gap: 8px;
+        }
+        @media(max-width:359px) {
+            flex: 0 0 55%;
+        }
     }
     &__card-info {
         display: flex;
@@ -54,6 +117,16 @@
         max-width: 448px;
         gap: 27px;
         justify-content: space-between;
+        @media(max-width:899px) {
+            flex: 0 0 100%;
+        }
+        @media(max-width:539px) {
+            gap: 21px;
+            padding: 4px 13px 0px 11px;
+        }
+        @media(max-width:359px) {
+            flex-wrap: wrap;
+        }
     }
     &__card-discount {
         position: absolute;
@@ -71,6 +144,10 @@
         border-radius: 50%;
         bottom: 0px;
         left: 19px;
+        @media(max-width:539px) {
+            left: 10px;
+            bottom: -5px;
+        }
     }
 
     &__card-desc {
@@ -82,8 +159,15 @@
         line-height: 19px;
         color: #272727;
         font-size: 16px;
+        @media(max-width:539px) {
+            font-size: 14px;
+            line-height: 17px;
+        }
         &:not(:first-child) {
             margin-top: 8px;
+            @media(max-width:539px) {
+                margin-top: 6px;
+            }
         }
         &_engine {
             & span {
@@ -98,6 +182,9 @@
     &__card-prices {
         font-family: 'Rubik';
         padding-top: 22px;
+        @media(max-width:539px) {
+            padding-top: 0px;
+        }
     }
 
     &__card-price-old {
@@ -107,6 +194,11 @@
         line-height: 24px;
         color: #A0A0A0;
         white-space: nowrap;
+        @media(max-width:539px) {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 17px;
+        }
     }
 
     &__card-price-now {
@@ -116,6 +208,11 @@
         color: #E82B2B;
         white-space: nowrap;
         margin-top: 6px;
+        @media(max-width:539px) {
+            font-size: 18px;
+            line-height: 21px;
+            margin-top: 1px;
+        }
     }
 
     &__card-benefit {
@@ -125,6 +222,16 @@
         line-height: 24px;
         width: min-content;
         padding-top: 22px;
+        @media(max-width:539px) {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 17px;
+            color: #272727;
+            padding-top: 0px;
+        }
+        @media(max-width:359px) {
+            flex: 0 0 55%;
+        }
         & b {
             font-family: 'Rubik';
             font-weight: 600;
@@ -133,6 +240,11 @@
             white-space: nowrap;
             margin-top: 6px;
             display: block;
+            @media(max-width:539px) {
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 21px;
+            }
         }
     }
 
@@ -142,5 +254,9 @@
         border-radius: 3.58543px;
         margin-top: 31px;
         padding: 11px 19px;
+        @media(max-width:539px) {
+            margin-top: 0px;
+
+        }
     }
 }
