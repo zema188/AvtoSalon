@@ -1,6 +1,11 @@
 .footer-w {
     background: #1B1B1B;
     margin-top: 83px;
+    &_brand-page {
+        @media(max-width:539px) {
+            margin-top: 0px;
+        }
+    }
     @media(max-width:767px) {
         margin-top: 46px;
     }

@@ -1,5 +1,8 @@
 .markup {
     padding-top: 48px;
+    @media(max-width:539px) {
+        padding-top: 13px;
+    }
     &__body {
 
         &_padding {
@@ -56,11 +59,12 @@
         }
         @media(max-width:539px) {
             border-radius: 5px;
-            padding: 15px 0px 0px 15px;
+            padding: 15px 0 22px 15px;
             justify-content: space-between;
+            gap: 20px;
         }
         @media(max-width:359px) {
-            padding: 15px 0px 15px 15px;
+            padding: 15px 0 22px 15px;
         }
     }
 
@@ -157,7 +161,7 @@
         @media(max-width:539px) {
             font-size: 8.66667px;
             line-height: 127%;
-            margin-top: 6px;
+            margin-top: 3px;
             max-width: 222px;
         }
         & span {
@@ -173,6 +177,11 @@
             align-items: center;
             justify-content: center;
         }
+        @media(max-width:539px) {
+            margin-top: 11px;
+            flex: 0 0 32%;
+            margin-right: 30px;
+        }
         & img {
             width: 100%;
         }
@@ -187,6 +196,9 @@
 
     &__advantages {
         padding-top: 23px;
+        @media(max-width:539px) {
+            padding-top: 28px;
+        }
         & h3 {
             @media(max-width:539px) {
                 font-family: 'Rubik';
@@ -275,6 +287,9 @@
     @media(max-width:767px) {
         padding-top: 17px;
     }
+    @media(max-width:539px) {
+        padding-top: 1px;
+    }
     &__slide {
         box-shadow: 3.26489px 3.26489px 9.79468px 1.8px rgba(22, 26, 22, 0.04);
         border-radius: 8.16223px;
@@ -361,6 +376,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media(max-width:539px) {
+            padding: 17px 19px 15px 19px;
+        }
         &.lock {
             color: #C5C5C5;
         }
@@ -483,8 +501,22 @@
     display: flex;
     justify-content: space-between;
     gap: 40px;
+    @media(max-width:1023px) {
+        flex-direction: column;
+        gap: 0px;
+    }
 }
 .markup__content {
     flex: 0 0 62.7%;
     max-width: 62.7%;
+    @media(max-width:1023px) {
+        flex: 0 0 100%;
+        max-width: none;
+    }
+}
+@media (max-width: 767px) {
+    .markup_credit {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }

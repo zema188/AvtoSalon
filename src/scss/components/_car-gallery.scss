@@ -1,13 +1,26 @@
 .car-gallery {
     padding-top: 50px;
+    @media(max-width:539px) {
+        padding-top: 29px;
+    }
     &__content {
         display: flex;
         gap: 16px;
         padding-top: 20px;
+        @media(max-width:899px) {
+            flex-wrap: wrap;
+        }
     }
 
     &__video {
         flex: 0 0 52%;
+        @media(max-width:899px) {
+            flex: 0 0 100%;
+            height: 328px;
+        }
+        @media(max-width:539px) {
+            height: 238px;
+        }
         & iframe {
             border-radius: 5.77376px;
             height: 100%;
@@ -35,6 +48,9 @@
                 top: 0;
                 display: block;
                 border-radius: 5.77376px;
+                @media(max-width:899px) {
+                    display: none;
+                }
             }
         }
         & img {
@@ -52,6 +68,18 @@
             color: #FFFFFF;
             z-index: 2;
             white-space: nowrap;
+            @media(max-width:899px) {
+                display: none;
+            }
+        }
+    }
+    &__btn_mobile {
+        display: none;
+        @media(max-width:899px) {
+            display: flex;
+            width: 100%;
+            max-width: 328px;
+            margin: 13px auto 0px;
         }
     }
 }

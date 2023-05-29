@@ -1,9 +1,22 @@
 .brand {
     padding-top: 48px;
+    @media(max-width:539px) {
+        padding-top: 20px;
+    }
     &__title {
         display: flex;
         align-items: center;
         gap: 20px;
+        & h3 {
+            @media(max-width:539px) {
+                font-family: 'Rubik';
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 21px;
+                color: #272727;
+                max-width: 270px;
+            }
+        }
     }
 
     &__title-pic {
@@ -12,9 +25,14 @@
     &__list {
         display: flex;
         flex-wrap: wrap;
-        column-gap: 30px;
-        row-gap: 30px;
+        gap: 30px;
         padding-top: 21px;
+        @media(max-width:767px) {
+            gap: 10px;
+        }
+        @media(max-width:539px) {
+            padding-top: 39px;
+        }
     }
 
     &__item {
@@ -25,10 +43,27 @@
         flex: 0 0 calc(25% - 22.5px);
         display: flex;
         flex-direction: column;
+        @media(max-width:1023px) {
+            flex: 0 0 calc(33.33333% - 20px);
+        }
+        @media(max-width:767px) {
+            flex: 0 0 calc(50% - 5px);
+            box-shadow: none;
+            padding: 0px;
+        }
+        &:nth-last-child(-n+2){
+            display: none;
+            @media(max-width:1023px) {
+                display: flex;
+            }
+        }
     }
 
     &__item-pic {
         flex: 1;
+        @media(max-width:539px) {
+            margin-bottom: 9px;
+        }
         & img {
             width: 100%;
         }
@@ -39,6 +74,11 @@
         font-size: 20px;
         line-height: 24px;
         color: #272727;
+        @media(max-width:539px) {
+            font-size: 14px;
+            line-height: 17px;
+            color: #0C2F85;
+        }
     }
 
     &__item-quantity {
@@ -46,8 +86,15 @@
         font-size: 14px;
         line-height: 17px;
         margin-top: 10px;
+        @media(max-width:539px) {
+            color: #7E7E7E;
+            margin-top: 7px;
+        }
         & span {
             font-weight: 400;
+            @media(max-width:539px) {
+    
+            }
         }
     }
 
@@ -56,6 +103,12 @@
         gap: 10px;
         margin-top: 19px;
         align-items: center;
+        @media(max-width:539px) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            margin-top: 6px;
+            gap: 7px;
+        }
     }
 
     &__item-price-now {
@@ -63,12 +116,18 @@
         font-size: 14px;
         line-height: 17px;
         color: #E82B2B;
+        @media(max-width:539px) {
+            color: #272727;
+        }
     }
 
     &__item-price-old {
         font-weight: 300;
         font-size: 12px;
         line-height: 14px;
+        @media(max-width:539px) {
+    
+        }
     }
 
     &__item-btn {
@@ -80,6 +139,11 @@
         color: #FFFFFF;
         margin-top: 18px;
         padding: 14px 5px;
+        @media(max-width:539px) {
+            margin-top: 7px;
+            border-radius: 5px;
+            padding: 10px 5px;
+        }
     }
 }
 .container {

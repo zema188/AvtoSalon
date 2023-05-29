@@ -10,13 +10,29 @@
     }
     @media(max-width:539px) {
         padding-top: 0px;
-        & h3 {
+    }
+    & h3 {
+        @media(max-width:539px) {
             display: none;
         }
     }
+    & .offers__title_mobile {
+        @media(max-width:539px) {
+            padding-top: 27px;
+            display: block;
+        }
+    }
     &_car-page {
+        & .offers__list {
+            @media(max-width:767px) {
+                padding-bottom: 15px;
+            }
+        }
         & .offers__card {
             padding: 33px 14px 28px 17px;
+            @media(max-width:539px) {
+                padding: 8px 14px 21px 5px;
+            }
         }
         & .offers__card-info {
             max-width: 483px;
@@ -28,6 +44,21 @@
             font-weight: 400;
             font-size: 18px;
             line-height: 21px;
+        }
+        & .offers__card-btn {
+            @media(max-width:539px) {
+                font-family: Rubik;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 14px;
+                color: #fff;
+                width: 100%;
+                max-width: 121px;
+                border-radius: 3.58543px;
+                margin-top: 31px;
+                padding: 11px 19px;
+                margin-top: 0px;
+            }
         }
     }
     &__list {
@@ -59,8 +90,11 @@
             }
         }
         @media(max-width:767px) {
-            padding: 8px 14px 21px 5px;
+            padding: 8px 14px 21px 15px;
             gap: 12px;
+        }
+        @media(max-width:539px) {
+            padding: 8px 14px 21px 5px;
         }
         &:not(:last-child) {
             margin-bottom: 8px;
@@ -126,6 +160,9 @@
         }
         @media(max-width:359px) {
             flex-wrap: wrap;
+        }
+        @media(max-width:333px) {
+            gap: 10px;
         }
     }
     &__card-discount {
@@ -199,6 +236,7 @@
             font-size: 14px;
             line-height: 17px;
         }
+
     }
 
     &__card-price-now {
@@ -232,6 +270,9 @@
         @media(max-width:359px) {
             flex: 0 0 55%;
         }
+        @media(max-width:333px) {
+            order: 1;
+        }
         & b {
             font-family: 'Rubik';
             font-weight: 600;
@@ -256,7 +297,6 @@
         padding: 11px 19px;
         @media(max-width:539px) {
             margin-top: 0px;
-
         }
     }
 }

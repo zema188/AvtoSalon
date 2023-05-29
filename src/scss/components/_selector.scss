@@ -4,6 +4,11 @@
         & .selector__content {
             display: block;
         }
+        & .selector__subtitle {
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
     }
     &__subtitle {
         font-family: 'Rubik';

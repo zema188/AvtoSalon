@@ -3,6 +3,20 @@
     @media(max-width:539px) {
         padding-top: 32px;
     }
+    &_brand {
+        @media(max-width:539px) {
+            background: #EFEFF1;
+            padding-bottom: 46px;
+            padding-top: 42px;
+            & .about__content {
+                background: #fff;
+                padding: 10px 20px 27px 20px;
+            }
+            & .about__pic {
+                display: none;
+            }
+        }
+    }
     & h3 {
         margin-bottom: 27px;
         @media(max-width:899px){
@@ -71,6 +85,9 @@
         display: flex;
         align-items: center;
         gap: 5px;
+        @media(max-width:539px) {
+            gap: 7px;
+        }
     }
     &__name {
         text-transform: uppercase;
@@ -78,6 +95,12 @@
         font-weight: 700;
         font-size: 26px;
         line-height: 31px;
+        @media(max-width:539px) {
+            font-weight: 400;
+            font-size: 25.5319px;
+            line-height: 30px;
+            color: #272727;
+        }
     }
 }
 .container {

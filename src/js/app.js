@@ -1248,18 +1248,18 @@ if(document.querySelectorAll('.additionally').length) {
           case 'mark': {
             addLock(currentList.querySelector('[name$="model"]'))
             addLock(currentList.querySelector('[name$="ads"]'))
-            addHidden(currentList.querySelector('[name$="calc"]'))
+            addHidden(document.querySelector('[data-name$="calc"]'))
             addHidden(currentList.querySelector('[name$="ads-item"]'))
             break
           }
           case 'model': {
             addLock(currentList.querySelector('[name$="ads"]'))
-            addHidden(currentList.querySelector('[name$="calc"]'))
+            addHidden(document.querySelector('[data-name$="calc"]'))
             addHidden(currentList.querySelector('[name$="ads-item"]'))
             break
           }
           case 'ads': {
-            addHidden(currentList.querySelector('[name$="calc"]'))
+            addHidden(document.querySelector('[data-name$="calc"]'))
             addHidden(currentList.querySelector('[name$="ads-item"]'))
             break
           }
@@ -1279,8 +1279,8 @@ if(document.querySelectorAll('.additionally').length) {
             break
           }
           case 'ads': {
-            if(currentList.querySelector('[name$="calc"]') !== null) {
-              currentList.querySelector('[name$="calc"]').classList.remove('hidden')
+            if(document.querySelector('[data-name$="calc"]') !== null) {
+              document.querySelector('[data-name$="calc"]').classList.remove('hidden')
             }
 
             if(currentList.querySelector('[name$="ads-item"]') !== null) {

@@ -262,8 +262,10 @@ body.disable-scroll {
       background: #2C64EE;
       @media(max-width:539px) {
         font-family: 'Rubik';
+        font-weight: 400;
         font-size: 14px;
-        line-height: 17px;
+        line-height: 14px;
+        color: #FFFFFF;
       }
       &:hover {
         background: #274daf;

@@ -1,9 +1,28 @@
 .sale {
     font-family: 'Rubik';
+    &_car-page {
+        @media(max-width:767px) {
+            & .sale__content {
+            }
+        }
+    }
+    &_mobile {
+        display: none;
+        @media(max-width:539px) {
+            display: block;
+        }
+    }
     &__content {
         display: flex;
         gap: 20px;
         padding-top: 34px;
+        @media(max-width:767px) {
+            flex-wrap: wrap;
+        }
+        @media(max-width:539px) {
+            padding-top: 27px;
+            gap: 24px;
+        }
     }
 
     &__text {
@@ -11,7 +30,14 @@
         background: linear-gradient(104.34deg, #2C64EE 2.17%, #69C9FF 120.72%);
         border-radius: 5px;
         padding: 66px 20px 20px 29px;
-        flex: 1;
+        flex: 1 0 45.7%;
+        @media(max-width:949px) {
+            padding: 20px;
+        }
+        @media(max-width:539px) {
+            border-radius: 15px;
+            padding: 25px 20px 35px 20px;
+        }
     }
 
     &__title {
@@ -22,6 +48,14 @@
         letter-spacing: 0.05em;
         color: #FFFFFF;
         max-width: 389px;
+        position: relative;
+        z-index: 1;
+        @media(max-width:539px) {
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 26px;
+            letter-spacing: 0.05em;
+        }
     }
 
     &__subtitle {
@@ -34,6 +68,13 @@
         max-width: 330px;
         position: relative;
         z-index: 1;
+        @media(max-width:539px) {
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.05em;
+            margin-top: 7px;
+            max-width: 160px;
+        }
     }
 
     &__pic {
@@ -41,8 +82,13 @@
         right: 0;
         bottom: 0;
         width: 36%;
+        max-width: 200px;
+        @media(max-width:767px) {
+            width: 34%;
+            max-width: 112px;
+        }
         & img {
-        border-radius: 0 0 5px 0;
+            border-radius: 0 0 5px 0;
             width: 100%;
         }
     }
@@ -53,12 +99,32 @@
         border-radius: 5px;
         max-width: 610px;
         padding: 36px;
+        @media(max-width:899px) {
+            padding: 20px;
+        }
+        @media(max-width:767px) {
+            display: none;
+        }
+        &_mobile {
+            @media(max-width:767px) {
+                display: block;
+                flex: 0 0 100%;
+                max-width: none;
+                box-shadow: none;
+                padding: 0px;
+            }
+        }
     }
 
     &__form-title {
         font-weight: 600;
         font-size: 26px;
         line-height: 31px;
+        @media(max-width:767px) {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+        }
     }
 
     &__form-subtitle {
@@ -66,14 +132,26 @@
         font-size: 16px;
         line-height: 19px;
         margin-top: 15px;
+        @media(max-width:767px) {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 17px;
+            color: #272727;
+        }
     }
 
     &__form-input {
+        @media(max-width:539px) {
+            flex: 0 0 100%;
+        }
     }
     &__form-info {
         display: flex;
         gap: 14px;
         margin-top: 15px;
+        @media(max-width:539px) {
+            flex-wrap: wrap;
+        }
     }
     &__form-btn {
         width: 100%;
@@ -83,6 +161,21 @@
         line-height: 21px;
         color: #FFFFFF;
         margin-top: 16px;
+        @media(max-width:767px) {
+            font-size: 16px;
+            line-height: 19px;
+            width: calc(50% - 7px);
+        }
+        @media(max-width:539px) {
+            width: 100%;
+            max-width: 400px;
+            font-family: 'Rubik';
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: #FFFFFF;
+            padding: 16px 5px;
+        }
     }
 
     &__form-lead {
@@ -92,6 +185,12 @@
         line-height: 14px;
         color: #8D8D8D;
         margin-top: 11px;
+        @media(max-width:767px) {
+            display: none;
+        }
+        @media(max-width:539px) {
+
+        }
         & a {
             color: #8D8D8D;
             text-decoration: underline;
