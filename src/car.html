@@ -21,6 +21,154 @@
 			"item5": "<a href=\"stock.html\" class=\"header__nav-item \">Акции</a>",
 			"item6": "<a href=\"contacts.html\" class=\"header__nav-item \">Контакты</a>"
 		})
+		<!-- Звонок окно -->
+		<div class="car__discount car__discount_margin car__discount_mobile popup ">
+			<div class="popup__body">
+				<div class="car__discount-content popup__content">
+					<div class="car__discount-header">
+						<div class="car__discount-header-title">
+							Цена
+						</div>
+						<div class="car__discount-header-price-now price">
+							400 000
+						</div>
+						<div class="car__discount-header-subtitle">
+							Цена без скидки
+						</div>
+						<div class="car__discount-header-price-before price">
+							500 000
+						</div>
+					</div>
+					<div class="car__discount-subtitle">
+						Скидки
+					</div>
+					<div class="car__discount-list">
+						<div class="car__discount-item">
+							С КАСКО
+							<span>до 20 000 ₽</span>
+						</div>
+						<div class="car__discount-item">
+							В Trade-in
+							<span>до 50 000 ₽</span>
+						</div>
+						<div class="car__discount-item">
+							В кредит
+							<span>до 30 000 ₽</span>
+						</div>
+					</div>
+					<div class="car__discount-lead">
+						Максимальная скидка, которую может предоставить салон. Подробности узнавайте
+						<span>по телефону</span>
+					</div>
+					<div class="car__discount-call btn btn_green show-modal-phone">
+						Позвонить
+					</div>
+					<div class="popup-close"></div>
+				</div>
+			</div>
+		</div>
+		<!-- кредитная форма -->
+		<!-- <div class="credit credit__col-item credit_car ">
+			<div class="credit__header">
+				<h4>
+					Автокредит от 18%
+				</h4>
+		
+				<div class="credit__header-close popup-close">
+		
+				</div>
+			</div>
+			<div class="credit__subtitle">
+				Выберите кредитные условия
+			</div>
+			<form class="credit__form">
+				<div class="credit__calc credit__block">
+					<div class="credit__item-calc">
+						<div class="credit__item">
+							<span class="credit__item-subtitle">
+								Желаемый срок кредита
+							</span>
+							<input class="credit__field" range-for="months" suffix="мес." min="1" max="96" value="96 мес.">
+							<input class="credit__field styled-slider js-range-slider" range-name="months" suffix="мес." type="text"
+							data-min="1"
+							data-max="96"
+							data-from="200"
+							>
+						 </div>
+						 <div class="credit__item-footer">
+							<span>1 мес</span>
+							<span>96 мес</span>
+						 </div>
+					</div>
+					<div class="credit__item-calc">
+						<div class="credit__item ">
+							<span class="credit__item-subtitle">
+								Первоначальный взнос
+							</span>
+							<input class="credit__field" range-for="deposit" suffix="%"  min="1" max="100" value="100 %">
+							<input class="credit__field styled-slider js-range-slider" range-name="deposit" suffix="%" type="text"
+							data-min="0"
+							data-max="100"
+							data-from="36"
+							>
+						 </div>
+						 <div class="credit__item-footer">
+							<span>0%</span>
+							<span>100%</span>
+						 </div>
+					</div>
+					<div class="credit__calc-res">
+						<div class="credit__calc-desc">
+							<div class="credit__calc-desc-subtitle">
+								Ежемесячный платеж:
+							</div>
+							<span class="credit-result">
+								4 230 ₽
+							</span>
+						</div>
+						<div class="credit__calc-desc">
+							<div class="credit__calc-desc-subtitle">
+								Годовая ставка:
+							</div>
+							<span class="credit-year-procent">
+								18%
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="credit__block">
+					<div class="credit__subtitle">
+						Укажите свои данные
+					</div>
+					<input class="credit__field credit__field_margin field scroll-to-visible-btn-send" placeholder="Ваше имя">
+					<input class="credit__field field scroll-to-visible-btn-send" type="tel" placeholder="Номер телефона">
+					<div class="credit__info_mobile">
+						<div class="credit__info-pic">
+							<picture>
+								<img src="./img/pic/car.png" alt="car">
+							</picture>
+						</div>
+						<div class="credit__info-text">
+							<div class="credit__info-name">	
+								Volkswagen Golf Plus 2011
+							</div>
+							<div class="credit__info-price-now price">
+								1 272 000
+							</div>
+							<div class="credit__info-price-before price">
+								855 900
+							</div>
+						</div>
+					</div>
+					<div class="credit__btn-submit btn btn_blue  btn_sumbit test">
+						
+					</div>
+					<div class="credit__disc">
+						Нажимая на кнопку, Вы принимаете <a href="#"> согласие на обработку персональных данных</a>
+					</div>
+				</div>
+			</form>
+		</div> -->
         <div class="navigation container">
             <div class="navigation__list">
                 <a href="#" class="navigation__list-item">
@@ -41,44 +189,75 @@
             <div class="car__content">
                 <div class="car__option">
                     <div class="car__preview-pic">
-                        <img src="./img/pic/car.png" alt="car">
+                        <img src="./img/pic/preview-car.png" alt="car">
                     </div>
                     <div class="car__color">
                         <div class="car__color-subtitle">
 							<b>
-								Цвет:
+								<a href="#">
+									Цвет:
+								</a>
 							</b>
                             <span class="car__color-name">
-                                Machine Grey Metallic
+								<a href="#">
+									Machine Grey Metallic
+								</a>
                             </span>
                         </div>
                         <div class="car__color-list">
-                            <div class="car__color-item">
-    
+                            <div class="car__color-item"
+							data-name="Чёрная Пантера"
+							style="background-color: #222222;"
+							data-img="https://avantaauto.ru/upload/iblock/d07/d07ddf7369535de5cdccc239670e492b.png"
+							">
                             </div>
-                            <div class="car__color-item">
-                                
+							<div class="car__color-item"
+							data-name="Голубая Планета"
+							style="background-color: #007eb3;"
+							data-img="https://avantaauto.ru/upload/iblock/51c/51cb2033ba3693765163fe57ffa80b4a.png"
+							">
                             </div>
-                            <div class="car__color-item">
-                                
+							<div class="car__color-item"
+							data-name="Аурум"
+							style="background-color: #de951a;"
+							data-img="https://avantaauto.ru/upload/iblock/8b8/8b8847cb525a5b72567ff76bdafee690.png"
+							">
                             </div>
-                            <div class="car__color-item">
-                                
+							<div class="car__color-item"
+							data-name="Белое облако"
+							style="background-color: #f3f3f3;"
+							data-img="https://avantaauto.ru/upload/iblock/c36/c3675d81e4f134e2b504268eddbc8202.png"
+							">
                             </div>
-                            <div class="car__color-item">
-                                
+							<div class="car__color-item"
+							data-name="Кориандр"
+							style="background-color: #5c5854;"
+							data-img="https://avantaauto.ru/upload/iblock/749/74965c37b8f6bc47ecdb059ac743bad4.png"
+							">
                             </div>
-                            <div class="car__color-item">
-                                
+							<div class="car__color-item"
+							data-name="Сердолик"
+							style="background-color: #7d0404;"
+							data-img="https://avantaauto.ru/upload/iblock/daf/daf008d6538be8b93481702649c667b5.png"
+							">
                             </div>
-                            <div class="car__color-item">
-                                
+							<div class="car__color-item"
+							data-name="Техно"
+							style="background-color: #a8aaa9;"
+							data-img="https://avantaauto.ru/upload/iblock/fef/fef0d5b4e1a5dbdacc54fe6145a7c09c.png"
+							">
                             </div>
-                            <div class="car__color-item">
-                                
+							<div class="car__color-item"
+							data-name="Рислинг"
+							style="background-color: #c8c8c1;"
+							data-img="https://avantaauto.ru/upload/iblock/fca/fca26e670d4f9f3957732cbf9c1b00f9.png"
+							">
                             </div>
-                            <div class="car__color-item">
-                                
+							<div class="car__color-item"
+							data-name="Борнео"
+							style="background-color: #798384;"
+							data-img="https://avantaauto.ru/upload/iblock/954/9545b69b32fc8aee97ab4ee17a53a49a.png"
+							">
                             </div>
                         </div>
                     </div>
@@ -99,7 +278,7 @@
 								1 099 900 ₽
 							</span>
                         </div>
-                        <button class="car__info-btn-discount">
+                        <button class="car__info-btn-discount car__discount-btn_mob">
                             <img src="https://yar-buauto.ru/themes/rubik/img/icons/arrow_discount.svg" alt="arrow-btn">
                         </button>
                     </div>

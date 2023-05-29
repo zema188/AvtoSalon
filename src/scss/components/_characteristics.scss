@@ -40,7 +40,13 @@
     }
 
     &__type {
-        padding: 20px 0 20px 22px;
+        &.active {
+            & .characteristics__type-header {
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
         &:nth-child(even) {
             background: #F5F5F5;
         }
@@ -60,6 +66,8 @@
         display: flex;
         gap: 10px;
         align-items: center;
+        cursor: pointer;
+        padding: 30px 22px 31px 22px;
         &::after {
             content: "";
             background: url(../img/icons/arrow_equipment.svg) 0 0 no-repeat;
@@ -71,7 +79,7 @@
     }
 
     &__type-list {
-        padding: 10px 0px 0px 0px;
+        padding: 8px 22px 13px 22px;
         display: none;
     }
     &__row-item-name {

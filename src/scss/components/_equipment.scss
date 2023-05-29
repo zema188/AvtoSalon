@@ -101,9 +101,15 @@
     }
 
     &__item {
-        padding: 18px 25px 20px 27px;
+        padding: 0 0 20px 0;
         gap: 10px;
-        cursor: pointer;
+        &.active {
+            & .equipment__item-name {
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
         &:nth-child(2) {
             border-radius: 0 0 5px 5px;
         }
@@ -115,9 +121,12 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        padding: 18px 25px 0px 27px;
+        cursor: pointer;
     }
     &__item-content {
         display: none;
+        padding: 18px 25px 20px 27px;
     }
     &__item-content-body {
         display: flex;

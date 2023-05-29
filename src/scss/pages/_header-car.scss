@@ -158,14 +158,3 @@
 .header__back_mobile {
 
 }
-.car__discount_mobile {
-  @media(max-width:1023px) {
-    @include popup;
-  }
-}
-.car__discount-content {
-  @media(max-width:1023px) {
-    z-index: 105;
-    position: relative;
-  }
-}

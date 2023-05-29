@@ -362,7 +362,7 @@ if(carEquipmentItem.length) {
 
 if(document.querySelectorAll('.credit__form').length) {
   // рассчет при загрузке страницы
-  calc()
+  // calc()
   //связываем поля друг с другом
   //поля ввода
   let fields = document.querySelectorAll('[range-for]')
@@ -1579,5 +1579,107 @@ function removeClickLabel(list) {
       labels[i].querySelector('input').checked = !labels[i].querySelector('input').checked
       e.preventDefault()
     })
+  }
+}
+
+// БЫСТРЫЙ ПОДБОР НОВОГО АВТОМОБИЛЯ selection__range
+if(document.querySelectorAll('.selection__range-input').length) {
+  console.log($('.selection__range-input'))
+  $('.selection__range-input').ionRangeSlider({
+    grid: false,
+    skin: "round",
+    hide_min_max: true,
+    hide_from_to: true,
+    onChange: function (data) {
+      let valueField = document.querySelector('.selection__range-value')
+      valueField.innerHTML = `До ${numberWithCommas(data.from)} р`
+    },
+  })
+}
+
+
+//equipment__item комплектация и цены 
+if(document.querySelectorAll('.equipment ').length) {
+  let equipment = document.querySelectorAll('.equipment') 
+
+  for(let i = 0; i < equipment.length; i++) {
+    equipmentToggle(equipment[i])
+  }
+
+  function equipmentToggle(equipmentBlock) {
+    let equipmentItem = equipmentBlock.querySelectorAll('.equipment__item-preview')
+
+    for(let i = 0; i < equipmentItem.length; i++) {
+
+      equipmentItem[i].onclick = function() {
+        let parent = this.closest('.equipment__item')
+        parent.classList.toggle('active')
+        let hiddenContetn = parent.querySelector('.equipment__item-content')
+        $(hiddenContetn).slideToggle(200)
+      }
+
+    }
+
+  }
+}
+
+
+//equipment__item комплектация и цены 
+if(document.querySelectorAll('.characteristics').length) {
+  let characteristics = document.querySelectorAll('.characteristics') 
+
+  for(let i = 0; i < characteristics.length; i++) {
+    characteristicsToggle(characteristics[i])
+  }
+
+  function characteristicsToggle(characteristicsBlock) {
+    let characteristicsItem = characteristicsBlock.querySelectorAll('.characteristics__type-header')
+
+    for(let i = 0; i < characteristicsItem.length; i++) {
+
+      characteristicsItem[i].onclick = function() {
+        let parent = this.closest('.characteristics__type')
+        parent.classList.toggle('active')
+        let hiddenContetn = parent.querySelector('.characteristics__type-list')
+        $(hiddenContetn).slideToggle(200)
+      }
+
+    }
+
+  }
+}
+// смена цвета машины по клику
+
+if(document.querySelectorAll('.car').length) {
+  let carBlock = document.querySelector('.car')
+  let colorList = carBlock.querySelector('.car__color-list')
+
+  colorList.addEventListener('click', function(e) {
+
+    let target = e.target
+    if(target.classList.contains('car__color-item')) {
+      changeColorCar(target) 
+    }
+
+  }) 
+
+  function changeColorCar(colorItem) {
+    let namePath = colorItem.getAttribute('data-name')
+    let imgPath = colorItem.getAttribute('data-img')
+    // где будем менять путь картинки
+    let img =  carBlock.querySelector('.car__preview-pic').querySelector('img')
+    img.setAttribute('src', imgPath)
+
+    // где будем название цвета
+    let name =  carBlock.querySelector('.car__color-name').querySelector('a')
+    name.innerHTML = namePath
+
+    if(carBlock.querySelector('.car__color-item.active') !== null) {
+      carBlock.querySelector('.car__color-item.active').classList.remove('active')
+    }
+    colorItem.classList.add('active')
+
+
+
   }
 }

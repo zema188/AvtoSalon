@@ -43,6 +43,7 @@
     }
 
     &__color {
+
         @media(max-width:1023px) {
             display: flex;
             flex-direction: column-reverse;
@@ -103,6 +104,9 @@
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
         cursor: pointer;
+        &.active {
+            transform: skew(-22deg) scale(1.05);
+        }
         @media(max-width:767px) {
             width: 39px;
             height: 7px;
@@ -213,6 +217,11 @@
         width: 44px;
         height: 32px;
         cursor: pointer;
+        &.active {
+            & img {
+                transform: rotate(0deg);
+            }
+        }
         @media(max-width:767px) {
             width: 28px;
             height: 21px;
@@ -254,12 +263,18 @@
         padding: 12px 10px;
         width: 100%;
         max-width: 322px;
+        &:hover {
+            background: #f74d4d;
+        }
         @media(max-width:1023px) {
             border: 0.6px solid #272727;
             border-radius: 2.42308px;
             background: #FFFFFF;
             width: fit-content;
             padding: 4px 6px;
+            &:hover {
+                background: transparent;
+            }
         }
         @media(max-width:767px) {
             margin-top: 0px;
