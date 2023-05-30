@@ -1598,23 +1598,23 @@ if(document.querySelectorAll('.selection__range-input').length) {
 }
 
 
-//equipment__item комплектация и цены 
-if(document.querySelectorAll('.equipment ').length) {
-  let equipment = document.querySelectorAll('.equipment') 
+//блоки со скрытом контентом
+if(document.querySelectorAll('.dropdown-block ').length) {
+  let dropwodnBlock = document.querySelectorAll('.dropdown-block') 
 
-  for(let i = 0; i < equipment.length; i++) {
-    equipmentToggle(equipment[i])
+  for(let i = 0; i < dropwodnBlock.length; i++) {
+    equipmentToggle(dropwodnBlock[i])
   }
 
-  function equipmentToggle(equipmentBlock) {
-    let equipmentItem = equipmentBlock.querySelectorAll('.equipment__item-preview')
+  function equipmentToggle(dropwodnBlock) {
+    let dropdownHeader = dropwodnBlock.querySelectorAll('.dropdown-header')
 
-    for(let i = 0; i < equipmentItem.length; i++) {
+    for(let i = 0; i < dropdownHeader.length; i++) {
 
-      equipmentItem[i].onclick = function() {
-        let parent = this.closest('.equipment__item')
+      dropdownHeader[i].onclick = function() {
+        let parent = this.closest('.dropdown-item')
         parent.classList.toggle('active')
-        let hiddenContetn = parent.querySelector('.equipment__item-content')
+        let hiddenContetn = parent.querySelector('.dropdown-hidden')
         $(hiddenContetn).slideToggle(200)
       }
 
@@ -1624,32 +1624,7 @@ if(document.querySelectorAll('.equipment ').length) {
 }
 
 
-//equipment__item комплектация и цены 
-if(document.querySelectorAll('.characteristics').length) {
-  let characteristics = document.querySelectorAll('.characteristics') 
-
-  for(let i = 0; i < characteristics.length; i++) {
-    characteristicsToggle(characteristics[i])
-  }
-
-  function characteristicsToggle(characteristicsBlock) {
-    let characteristicsItem = characteristicsBlock.querySelectorAll('.characteristics__type-header')
-
-    for(let i = 0; i < characteristicsItem.length; i++) {
-
-      characteristicsItem[i].onclick = function() {
-        let parent = this.closest('.characteristics__type')
-        parent.classList.toggle('active')
-        let hiddenContetn = parent.querySelector('.characteristics__type-list')
-        $(hiddenContetn).slideToggle(200)
-      }
-
-    }
-
-  }
-}
 // смена цвета машины по клику
-
 if(document.querySelectorAll('.car').length) {
   let carBlock = document.querySelector('.car')
   let colorList = carBlock.querySelector('.car__color-list')

@@ -1,0 +1,7 @@
+.dropdown-item.active {
+    & .dropdown-header {
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+}

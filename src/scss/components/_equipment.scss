@@ -101,7 +101,7 @@
     }
 
     &__item {
-        padding: 0 0 20px 0;
+        padding: 0 0 0 0;
         gap: 10px;
         &.active {
             & .equipment__item-name {
@@ -121,7 +121,7 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        padding: 18px 25px 0px 27px;
+        padding: 18px 25px 19px 27px;
         cursor: pointer;
     }
     &__item-content {
