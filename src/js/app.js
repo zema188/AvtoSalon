@@ -74,27 +74,12 @@ function toggleMobileMenu() {
 const filter = document.querySelector('.filter')
 // Size-control
 window.addEventListener('resize', function(event){
-
     let popups = document.querySelectorAll('.popup')
-    let credit = document.querySelector('.credit')
-    // if(window.innerWidth >= 540) {
-    //   if(filter !== null) {
-    //     filter.classList.remove('popup')
-    //     bodyScrollLock.enableBodyScroll(filter);
-    //   }
-    //     // bodyNotFixed()
-    // }
-    if(window.innerWidth <=539 && credit !== null) {
-      if(credit.classList.contains('credit_car'))
-      credit.classList.add('popup')
-    }
     if(window.innerWidth >= 1024) {
       mobileMenu.classList.remove('active')
       for (let i = 0; i < headerMenuBtn.length; i++) {
         headerMenuBtn[i].classList.remove('open')
       }
-      if(credit !== null)
-      credit.classList.remove('popup')
       let popupActive = false
       for (let i = 0; i < popups.length; i++) {
         if (popups[i].classList.contains('active')) {
@@ -102,38 +87,8 @@ window.addEventListener('resize', function(event){
           break
         }
       }
-      if(!popupActive && credit!==null) {
-        bodyScrollLock.enableBodyScroll(credit);
-        // bodyNotFixed()
-      }
     }
-    if(window.innerWidth <=1023) {
-      let creditCar = document.querySelector('.credit_car')
-      if(creditCar !== null) {
-        let style = getComputedStyle(creditCar)
-        if(style.display == 'none') {
-          $(creditCar).attr('style', '')
-        }
-      }
-    }
-    // if(window.innerWidth <= 539) {
-    //   if(filter !== null && !filter.classList.contains('filter_catalog')) {
-    //     filter.classList.add('active')
-    //     filter.style.display = 'block'
-    //   }
-    // }
 })
-// if(window.innerWidth <= 539 && (filter !== null)) {
-//   if(!filter.classList.contains('filter_catalog')) {
-//     filter.classList.add('active')
-//   } else {
-//     filter.classList.remove('active')
-//     $( filter ).slideUp( "slow", function() {
-//       // Animation complete.
-//     });
-//   }
-// }
-
 
 //preview-swiper
 const previewSwiper = new Swiper('.preview-swiper', {
@@ -1153,21 +1108,6 @@ function addYears(target) {
 }
 
 
-//mileage__content open hidden 
-
-// if(document.querySelectorAll('.mileage__item').length) {
-//   let mileage = document.querySelector('.mileage')
-//   let mileageContentHidden = mileage.querySelectorAll('.mileage__item')
-//   let showMoreBtn = mileage.querySelector('.btn_dropdown')
-//   showMoreBtn.onclick = function() {
-//     this.classList.add('hidden')
-//     for (let i = 0; i < mileageContentHidden.length; i++) {
-//       mileageContentHidden[i].classList.remove('hidden')
-//     }
-//   }
-// }
-
-
 //show phone by blick btns
 
 if(document.querySelectorAll('.show-modal-phone').length) {
@@ -1628,33 +1568,78 @@ if(document.querySelectorAll('.dropdown-block ').length) {
 if(document.querySelectorAll('.car').length) {
   let carBlock = document.querySelector('.car')
   let colorList = carBlock.querySelector('.car__color-list')
+  let colorItem = colorList.querySelectorAll('.car__color-item')
 
   colorList.addEventListener('click', function(e) {
 
     let target = e.target
     if(target.classList.contains('car__color-item')) {
-      changeColorCar(target) 
+      changeColorCar(target)
+      changerActive(colorItem)
+      target.classList.add('active')
+
+      changeColorSwiperSlide(target)
     }
 
   }) 
 
   function changeColorCar(colorItem) {
-    let namePath = colorItem.getAttribute('data-name')
-    let imgPath = colorItem.getAttribute('data-img')
+    let name = colorItem.dataset.name
+    let imgPath = colorItem.dataset.img
     // где будем менять путь картинки
     let img =  carBlock.querySelector('.car__preview-pic').querySelector('img')
     img.setAttribute('src', imgPath)
 
     // где будем название цвета
-    let name =  carBlock.querySelector('.car__color-name').querySelector('a')
-    name.innerHTML = namePath
+    let namePath =  carBlock.querySelector('.car__color-name').querySelector('a')
+    namePath.innerHTML = name
 
-    if(carBlock.querySelector('.car__color-item.active') !== null) {
-      carBlock.querySelector('.car__color-item.active').classList.remove('active')
-    }
-    colorItem.classList.add('active')
 
 
 
   }
+  createColorSwiperSlides()
+  //делаем color-swiper__slide
+  function createColorSwiperSlides() {
+    let colorSwiperWrapper = document.querySelector('.color-swiper__wrapper')
+    let colors = document.querySelectorAll('.car__color-item')
+
+    for(let i = 0; i < colors.length; i++) {
+      let name = colors[i].dataset.name
+      let imgPath = colors[i].dataset.img
+      let color = window.getComputedStyle(colors[i]).backgroundColor
+      let slide = 
+      `<div class="color-swiper__slide swiper-slide" data-name="${name}" data-img=${imgPath}>
+        <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" d="M3.5 8.47995V11C3.5 12.3903 4.09111 13.6702 5.08325 14.6876C5.01299 14.6332 4.9466 14.5718 4.88507 14.5035L0.385072 9.50346C-0.169117 8.88769 -0.119199 7.93926 0.496566 7.38507C1.11233 6.83088 2.06077 6.8808 2.61495 7.49657L3.5 8.47995Z" fill="${color}"/>
+          <path d="M11.5 2.5V4C11.5 4.27614 11.2761 4.5 11 4.5C10.7239 4.5 10.5 4.27614 10.5 4V1.5C10.5 0.671573 9.82843 0 9 0C8.17157 0 7.5 0.671573 7.5 1.5V4C7.5 4.27614 7.27614 4.5 7 4.5C6.72386 4.5 6.5 4.27614 6.5 4V3C6.5 2.17157 5.82843 1.5 5 1.5C4.17157 1.5 3.5 2.17157 3.5 3V11C3.5 14.3137 6.85786 17 11 17C15.1421 17 18.5 14.3137 18.5 11V4.5C18.5 3.67157 17.8284 3 17 3C16.3435 3 15.7855 3.42173 15.5822 4.00905C15.4918 4.27 15.2761 4.5 15 4.5C14.7239 4.5 14.5 4.27614 14.5 4V2.5C14.5 1.67157 13.8284 1 13 1C12.1716 1 11.5 1.67157 11.5 2.5Z" fill="${color}" />
+        </svg>
+      </div>`
+      colorSwiperWrapper.innerHTML += slide
+    }
+  }
+  // <!-- мобильный переключатель цвета авто -->
+  const colorSwiper = new Swiper('.color-swiper', {
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '.color-swiper__next',
+      prevEl: '.color-swiper__prev',
+    },
+  })
+  colorSwiper.on('slideChange', function () {
+    let currentSlide = document.querySelectorAll('.color-swiper__slide')[colorSwiper.realIndex]
+    changeColorCar(currentSlide)
+
+    changerActive(colorItem)
+    colorItem[colorSwiper.realIndex].classList.add('active')
+  });
+  function changeColorSwiperSlide(colorItem) {
+    let name = colorItem.dataset.name
+    let slides = document.querySelectorAll('.color-swiper__slide')
+    for(let i = 0; i < slides.length; i++) {
+      if(slides[i].dataset.name == name)
+        colorSwiper.slideTo(i)
+    }
+  }
 }
+

@@ -30,6 +30,7 @@
 
     &__option {
         flex: 0 0 62%;
+        position: relative;
     }
 
     &__preview-pic {
@@ -105,7 +106,8 @@
         transition: all 0.3s ease;
         cursor: pointer;
         &.active {
-            transform: skew(-22deg) scale(1.05);
+            z-index: 1;
+            transform: skew(-22deg) scale(1.5);
         }
         @media(max-width:767px) {
             width: 39px;

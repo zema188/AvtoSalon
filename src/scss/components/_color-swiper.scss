@@ -1,0 +1,32 @@
+.car-color-mobile {
+    display: none;
+    align-items: center;
+    width: fit-content;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    gap: 7px;
+    @media(max-width:539px) {
+        display: flex;
+    }
+}
+.color-swiper {
+    width: 19px;
+		&__arrow {
+		}
+
+		&__prev {
+		}
+
+		&__wrapper {
+		}
+
+		&__slide {
+		}
+
+		&__next {
+            & svg {
+                transform: rotate(180deg);
+            }
+		}
+}
