@@ -13,7 +13,7 @@
 </head>
 <body>	
 	<div class="wrapper">
-		@@include("./header-car.html", {
+		@@include("./header.html", {
 			"item1": "<a href=\"catalog.html\" class=\"header__nav-item active\">Автомобили</a>",
 			"item2": "<a href=\"credit.html\" class=\"header__nav-item \">Автокредит</a>",
 			"item3": "<a href=\"trade-in.html\" class=\"header__nav-item \">Trade-in</a>",
@@ -457,8 +457,15 @@
 				</div>
 			</div>
 		</div>
+		<div class="car__footer-fixed">
+			<div class="car__footer-buy-btn open-credit-btn">
+				<span>Купить в кредит</span>
+				от&nbsp;8 471 р/мес.&nbsp;под 18% годовых
+			</div>
+			<div class="car__footer-buy-call btn show-modal-phone"></div>
+		</div>
 		@@include("./footer.html", {
-			"item1": "<div class=\"footer-w footer-w_brand-page\">"
+			"item1": "<div class=\"footer-w footer-w_brand-page footer-w_padding-bottom\">"
 		})
 	</div>
 

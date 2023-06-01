@@ -93,7 +93,15 @@
             column-gap: 9px;
         }
     }
-
+    &__color-item-w {
+        height: 34px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media(max-width:767px) {
+            height: 11px;
+        }
+    }
     &__color-item {
         width: 62px;
         height: 26px;
@@ -107,7 +115,13 @@
         cursor: pointer;
         &.active {
             z-index: 1;
-            transform: skew(-22deg) scale(1.5);
+            // transform: skew(-22deg) scale(1.5);
+            width: 106px;
+            height: 34px;
+            @media(max-width:767px) {
+                width: 62px;
+                height: 11px;
+            }
         }
         @media(max-width:767px) {
             width: 39px;
@@ -115,6 +129,7 @@
             border: 1px solid #FFFFFF;
             -webkit-transform: skew(-30deg);
             transform: skew(-30deg);
+            
         }
     }
 

@@ -1,0 +1,50 @@
+.car__footer-fixed {
+    position: fixed;
+    width: 100%;
+    gap: 8px;
+    padding: 15px;
+    bottom: 0px;
+    left: 0;
+    z-index: 9;
+    justify-content: center;
+    display: none;
+    opacity: 0;
+    transition: .2s;
+    pointer-events: none;
+    @media (max-width: 539px) {
+        display: flex;
+    }
+    &.active {
+        pointer-events: all;
+        opacity: 1;
+    }
+}
+.car__footer-buy-btn {
+    background: #E82B2B;
+    border-radius: 10px;
+    font-family: "Rubik";
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 12px 15px;
+    width: 100%;
+    max-width: 355px;
+    & span {
+        display: block;
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 3px;
+    }
+}
+.car__footer-buy-call {
+    background: url(../img/icons/phone_call.svg), #12BC3A;
+    background-size: cover;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: 61px;
+    height: auto;
+    padding: 20px 30.5px;
+}
