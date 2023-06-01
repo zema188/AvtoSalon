@@ -31,7 +31,7 @@
         & .offers__card {
             padding: 33px 14px 28px 17px;
             @media(max-width:539px) {
-                padding: 8px 14px 21px 5px;
+                padding: 8px 14px 21px 15px;
             }
         }
         & .offers__card-info {
@@ -91,10 +91,10 @@
         }
         @media(max-width:767px) {
             padding: 8px 14px 21px 15px;
-            gap: 12px;
+            gap: 9px;
         }
         @media(max-width:539px) {
-            padding: 8px 14px 21px 5px;
+            padding: 8px 14px 21px 15px;
         }
         &:not(:last-child) {
             margin-bottom: 8px;
@@ -156,7 +156,7 @@
         }
         @media(max-width:539px) {
             gap: 21px;
-            padding: 4px 13px 0px 11px;
+            // padding: 4px 13px 0px 11px;
         }
         @media(max-width:359px) {
             flex-wrap: wrap;

@@ -367,9 +367,6 @@ body.disable-scroll {
         transform: translateX(-100%);
         transition: 2s;
       }
-      &::after {
-        content: "Оставить заявку";
-      }
     }
     &_reset {
       gap: 9px;
@@ -384,9 +381,6 @@ body.disable-scroll {
 .progress-bar-striped {
   background: linear-gradient(to right, #2c64ee, #139e33 ); /* Chrome 10-25, Safari 5.1-6 */
   cursor: pointer;
-  &::after {
-    animation: wordChange 5.5s linear forwards;
-  }
   pointer-events: none;
   &:hover {
   background: linear-gradient(to right, #2c64ee, #139e33 ); /* Chrome 10-25, Safari 5.1-6 */
@@ -394,19 +388,7 @@ body.disable-scroll {
   animation: gradientChange 5s linear forwards;
 }
 
-@keyframes wordChange {
-  0% {
-    display: none;
-  }
-  50% { 
 
-  }
-  100% {
-    content: "Заявка отправлена";
-    z-index: 2;
-    position: relative;
-  }
-}
 @keyframes gradientChange {
   0% {
     background-position: 0% 0%;

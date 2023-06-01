@@ -1646,13 +1646,13 @@ if(document.querySelectorAll('.car').length) {
 
 //footer btn credit, call 
 
-if(document.querySelectorAll('.car__footer-fixed').length) {
-  let carFooterFixed = document.querySelector('.car__footer-fixed')
-  document.addEventListener("scroll", function() {
-    if(window.pageYOffset > 50) {
-      carFooterFixed.classList.add('active')
-    } else {
-      carFooterFixed.classList.remove('active')
-    }
-  })
-}
+// if(document.querySelectorAll('.car__footer-fixed').length) {
+//   let carFooterFixed = document.querySelector('.car__footer-fixed')
+//   document.addEventListener("scroll", function() {
+//     if(window.pageYOffset > 50) {
+//       carFooterFixed.classList.add('active')
+//     } else {
+//       carFooterFixed.classList.remove('active')
+//     }
+//   })
+// }

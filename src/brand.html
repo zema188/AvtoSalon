@@ -21,6 +21,114 @@
 			"item5": "<a href=\"stock.html\" class=\"header__nav-item \">Акции</a>",
 			"item6": "<a href=\"contacts.html\" class=\"header__nav-item \">Контакты</a>"
 		})
+		<!-- кредитная форма -->
+		<div class="credit credit__col-item credit_car popup popup-modal ">
+			<div class="popup__body">
+				<div class="popup__content">
+					<div class="credit__header">
+						<h4>
+							Автокредит от 18%
+						</h4>
+				
+						<div class="credit__header-close popup-close">
+				
+						</div>
+					</div>
+					<div class="credit__subtitle">
+						Выберите кредитные условия
+					</div>
+					<form class="credit__form">
+						<div class="credit__calc credit__block">
+							<div class="credit__item-calc">
+								<div class="credit__item">
+									<span class="credit__item-subtitle">
+										Желаемый срок кредита
+									</span>
+									<input class="credit__field" range-for="months" suffix="мес." min="1" max="96" value="96 мес.">
+									<input class="credit__field styled-slider js-range-slider" range-name="months" suffix="мес." type="text"
+									data-min="1"
+									data-max="96"
+									data-from="200"
+									>
+									</div>
+									<div class="credit__item-footer">
+									<span>1 мес</span>
+									<span>96 мес</span>
+									</div>
+							</div>
+							<div class="credit__item-calc">
+								<div class="credit__item ">
+									<span class="credit__item-subtitle">
+										Первоначальный взнос
+									</span>
+									<input class="credit__field" range-for="deposit" suffix="%"  min="1" max="100" value="100 %">
+									<input class="credit__field styled-slider js-range-slider" range-name="deposit" suffix="%" type="text"
+									data-min="0"
+									data-max="100"
+									data-from="36"
+									>
+									</div>
+									<div class="credit__item-footer">
+									<span>0%</span>
+									<span>100%</span>
+									</div>
+							</div>
+							<div class="credit__calc-res">
+								<div class="credit__calc-desc">
+									<div class="credit__calc-desc-subtitle">
+										Ежемесячный платеж:
+									</div>
+									<span class="credit-result">
+										4 230 ₽
+									</span>
+								</div>
+								<div class="credit__calc-desc">
+									<div class="credit__calc-desc-subtitle">
+										Годовая ставка:
+									</div>
+									<span class="credit-year-procent">
+										18%
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="credit__block">
+							<div class="credit__subtitle">
+								Укажите свои данные
+							</div>
+							<input class="credit__field credit__field_margin field scroll-to-visible-btn-send" placeholder="Ваше имя">
+							<input class="credit__field field scroll-to-visible-btn-send" type="tel" placeholder="Номер телефона">
+							<div class="credit__info_mobile">
+								<div class="credit__info-pic">
+									<picture>
+										<source type="image/webp" srcset="./img/pic/car-3.webp">
+										<source type="image/png" srcset="./img/pic/car-3.png">
+										<img src="./img/pic/car-3.png" alt="car">
+									</picture>
+								</div>
+								<div class="credit__info-text">
+									<div class="credit__info-name">	
+										Volkswagen Golf Plus 2011
+									</div>
+									<div class="credit__info-price-now price">
+										1 272 000 ₽
+									</div>
+									<div class="credit__info-price-before price">
+										855 900 ₽
+									</div>
+								</div>
+							</div>
+							<div class="credit__btn-submit btn btn_blue  btn_sumbit test">
+								Оставить заявку
+							</div>
+							<div class="credit__disc">
+								Нажимая на кнопку, Вы принимаете <a href="#"> согласие на обработку персональных данных</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
         <div class="brand container">
             <div class="brand__title">
                 <div class="brand__title-pic">
@@ -439,7 +547,11 @@
         <div class="about about_brand container">
 			<div class="about__content">
 				<div class="about__pic">
-					<img src="./img/pic/lada-brand.png" alt="lada">
+					<picture>
+						<source type="image/webp" srcset="./img/pic/lada-brand.webp">
+						<source type="image/png" srcset="./img/pic/lada-brand.png">
+						<img src="./img/pic/lada-brand.png" alt="lada">
+					</picture>
 				</div>
 				<div class="about__text">
                     <p class="about__brand">

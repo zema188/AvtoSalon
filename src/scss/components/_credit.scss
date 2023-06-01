@@ -297,6 +297,7 @@
         line-height: 22px;
         color: #12BC3A;
         margin-top: 10px;
+        white-space: nowrap;
     }
 
     &__info-price-before {
@@ -305,6 +306,7 @@
         line-height: 16px;
         text-decoration: line-through;
         color: #8D8D8D;
+        white-space: nowrap;
         margin-top: 8px;
     }
 }

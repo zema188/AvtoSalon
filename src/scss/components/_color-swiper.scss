@@ -13,6 +13,15 @@
 .color-swiper {
     width: 19px;
 		&__arrow {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                left: -9px;
+                top: -8px;
+                width: 30px;
+                height: 30px;
+            }
 		}
 
 		&__prev {
@@ -27,6 +36,9 @@
 		&__next {
             & svg {
                 transform: rotate(180deg);
+            }
+            &::after {
+                left: 0px;
             }
 		}
 }

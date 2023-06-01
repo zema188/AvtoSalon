@@ -8,15 +8,17 @@
     z-index: 9;
     justify-content: center;
     display: none;
-    opacity: 0;
+    // opacity: 0;
     transition: .2s;
-    pointer-events: none;
-    @media (max-width: 539px) {
+    // pointer-events: none;
+    // @media (max-width: 539px) {
+    //     display: flex;
+    // }
+    // &.active {
+    //     pointer-events: all;
+    //     opacity: 1;
+    @media(max-width:539px) {
         display: flex;
-    }
-    &.active {
-        pointer-events: all;
-        opacity: 1;
     }
 }
 .car__footer-buy-btn {

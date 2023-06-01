@@ -1546,6 +1546,11 @@
     height: 171px;
     position: relative;
     display: none;
+    & .custom-w {
+        @media(max-width:539px) {
+            border-bottom: 0px;
+        }
+    }
     &::before {
         content: "";
         position: absolute;
