@@ -360,6 +360,9 @@
         @media(max-width:539px) {
             width: 31px;
         }
+        & img {
+            max-width: 100%;
+        }
     }
     &__item-side {
         display: flex;

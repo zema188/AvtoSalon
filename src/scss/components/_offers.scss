@@ -227,7 +227,7 @@
     &__card-price-old {
         font-style: normal;
         font-weight: 300;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 24px;
         color: #A0A0A0;
         white-space: nowrap;
@@ -241,7 +241,7 @@
 
     &__card-price-now {
         font-weight: 600;
-        font-size: 24px;
+        font-size: 21px;
         line-height: 28px;
         color: #E82B2B;
         white-space: nowrap;
@@ -273,10 +273,11 @@
         @media(max-width:333px) {
             order: 1;
         }
+            white-space: nowrap;
         & b {
             font-family: 'Rubik';
             font-weight: 600;
-            font-size: 24px;
+            font-size: 21px;
             line-height: 28px;
             white-space: nowrap;
             margin-top: 6px;

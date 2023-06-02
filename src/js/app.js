@@ -165,9 +165,9 @@ const benefitSwiperCar = new Swiper('.benefit-swiper-car', {
 
 //types-swiper
 const typesSwiper = new Swiper('.types-swiper', {
-    slidesPerView: 2.55,
+    slidesPerView: 3.5,
     speed: 400,
-    spaceBetween: 10,
+    spaceBetween: 15,
     // centeredSlides: true,
 })
 
@@ -1586,6 +1586,7 @@ if(document.querySelectorAll('.car').length) {
   function changeColorCar(colorItem) {
     let name = colorItem.dataset.name
     let imgPath = colorItem.dataset.img
+    console.log('test')
     // где будем менять путь картинки
     let img =  carBlock.querySelector('.car__preview-pic').querySelector('img')
     img.setAttribute('src', imgPath)
@@ -1643,6 +1644,42 @@ if(document.querySelectorAll('.car').length) {
   }
 }
 
+// скролл до блока по клику на ticker-swiper__slide 
+if(document.querySelectorAll('.ticker-swiper__slide').length) {
+  let tickers = document.querySelectorAll('.ticker-swiper__slide')
+  for(let i = 0; i < tickers.length; i++) {
+    tickers[i].addEventListener('click', function() {
+      let id = tickers[i].getAttribute('href')
+      id = id.substring(1) 
+      let blockToScroll = document.querySelector('[ticker-name="'+id+'"]')
+      if(blockToScroll!== null) {
+        $('body,html').animate({
+          scrollTop: $(blockToScroll).offset().top - 78
+        },500);
+    }
+    })
+  }
+}
+
+// открытие формы с номером телефона и фио
+
+if(document.querySelectorAll('.open-default-form').length) {
+  let btnDefault = document.querySelectorAll('.open-default-form')
+  let defaultForm = document.querySelector('.popup-form-default')
+  for(let i = 0; i < btnDefault.length; i++) {
+    btnDefault[i].addEventListener('click', function(e) {
+      e.preventDefault()
+      e.stopPropagation();
+      defaultForm.classList.add('active')
+      bodyScrollLock.disableBodyScroll(defaultForm)
+    })
+  }
+}
+
+//ввод только кириллицы
+$('body').on('input', '.input-ru', function(){
+	this.value = this.value.replace(/[^а-яё\s]/gi, '');
+});
 
 //footer btn credit, call 
 

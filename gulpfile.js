@@ -13,6 +13,9 @@ global.app = {
     plugins: plugins
 }
 
+
+import { cssChangeName } from "./gulp/tasks/scss.js";
+import { resetCSS } from "./gulp/tasks/resetCSS.js";
 import { copy } from "./gulp/tasks/copy.js";
 import { reset } from "./gulp/tasks/reset.js";
 import { html } from "./gulp/tasks/html.js";
@@ -30,7 +33,10 @@ function watcher() {
 }
 
 const mainTasks = gulp.parallel(copy, html, scss, js, images);
-
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 
+
+const build = gulp.series(gulp.parallel(resetCSS, cssChangeName, scss));
+
 gulp.task('default', dev);
+gulp.task('build', build);

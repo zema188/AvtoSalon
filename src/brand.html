@@ -96,8 +96,8 @@
 							<div class="credit__subtitle">
 								Укажите свои данные
 							</div>
-							<input class="credit__field credit__field_margin field scroll-to-visible-btn-send" placeholder="Ваше имя">
-							<input class="credit__field field scroll-to-visible-btn-send" type="tel" placeholder="Номер телефона">
+							<input class="credit__field credit__field_margin field scroll-to-visible-btn-send input-ru" placeholder="Ваше имя" required>
+							<input class="credit__field field scroll-to-visible-btn-send" type="tel" placeholder="Номер телефона" required>
 							<div class="credit__info_mobile">
 								<div class="credit__info-pic">
 									<picture>
@@ -118,9 +118,9 @@
 									</div>
 								</div>
 							</div>
-							<div class="credit__btn-submit btn btn_blue  btn_sumbit test">
+							<button class="credit__btn-submit btn btn_blue  btn_sumbit test">
 								Оставить заявку
-							</div>
+							</button>
 							<div class="credit__disc">
 								Нажимая на кнопку, Вы принимаете <a href="#"> согласие на обработку персональных данных</a>
 							</div>
@@ -312,12 +312,12 @@
                         Перезвоним вам в ближайшее время и расскажем подробнее.
                     </div>
                     <div class="sale__form-info">
-                        <input class="sale__form-input input" placeholder="Ваше имя">
-                        <input class="sale__form-input input" placeholder="Номер телефона">
+                        <input class="sale__form-input input input-ru" placeholder="Ваше имя" required>
+                        <input class="sale__form-input input" type="tel" placeholder="Номер телефона" required>
                     </div>
-                    <div class="sale__form-btn btn btn_blue">
+                    <button type="submit" class="sale__form-btn btn btn_blue">
                         Оставить заявку
-                    </div>
+                    </button>
                     <div class="sale__form-lead">
                         Нажимая на кнопку, Вы принимаете <a href="#">согласие на обработку персональных данных</a>
                     </div>
@@ -395,7 +395,7 @@
 								578 000 р
 							</b>
 						</div>
-						<button class="offers__card-btn btn btn_blue">
+						<button class="offers__card-btn btn btn_blue open-default-form">
 							Купить
 						</button>
 					</div>
@@ -466,7 +466,7 @@
 								578 000 р
 							</b>
 						</div>
-						<button class="offers__card-btn btn btn_blue">
+						<button class="offers__card-btn btn btn_blue open-default-form">
 							Купить
 						</button>
 					</div>
@@ -537,7 +537,7 @@
 								578 000 р
 							</b>
 						</div>
-						<button class="offers__card-btn btn btn_blue">
+						<button class="offers__card-btn btn btn_blue open-default-form">
 							Купить
 						</button>
 					</div>
@@ -569,15 +569,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="car__footer-fixed">
-			<div class="car__footer-buy-btn open-credit-btn">
-				<span>Купить в кредит</span>
-				от&nbsp;8 471 р/мес.&nbsp;под 18% годовых
-			</div>
-			<div class="car__footer-buy-call btn show-modal-phone"></div>
-		</div>
 		@@include("./footer.html", {
-			"item1": "<div class=\"footer-w footer-w_brand-page footer-w_padding-bottom\">"
+			"item1": "<div class=\"footer-w footer-w_brand-page \">"
 		})
 	</div>
 
