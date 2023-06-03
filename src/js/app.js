@@ -336,7 +336,7 @@ if(document.querySelectorAll('.credit__form').length) {
         let id = $(jsRangeSlider[i]).attr('range-name')
         let field = document.querySelector('[range-for="'+id+'"]')
         let suffix = $(jsRangeSlider[i]).attr('suffix')
-        field.value = numberWithCommas(data.from) + ' ' + suffix
+        field.value = numberWithCommas(data.from) + '' + suffix
         calc()
       },
     })
@@ -1586,7 +1586,6 @@ if(document.querySelectorAll('.car').length) {
   function changeColorCar(colorItem) {
     let name = colorItem.dataset.name
     let imgPath = colorItem.dataset.img
-    console.log('test')
     // где будем менять путь картинки
     let img =  carBlock.querySelector('.car__preview-pic').querySelector('img')
     img.setAttribute('src', imgPath)
@@ -1595,7 +1594,12 @@ if(document.querySelectorAll('.car').length) {
     let namePath =  carBlock.querySelector('.car__color-name').querySelector('a')
     namePath.innerHTML = name
 
-
+    // страница объявления смена картинки в кредитном калькуляторе 
+    if(document.querySelectorAll('.credit__info-pic').length) {
+      let creditPic = document.querySelector('.credit__info-pic')
+      let img =  creditPic.querySelector('img')
+      img.setAttribute('src', imgPath)
+    }
 
 
   }
@@ -1622,15 +1626,15 @@ if(document.querySelectorAll('.car').length) {
   // <!-- мобильный переключатель цвета авто -->
   const colorSwiper = new Swiper('.color-swiper', {
     slidesPerView: 1,
+    loop: true,
     navigation: {
       nextEl: '.color-swiper__next',
       prevEl: '.color-swiper__prev',
     },
   })
   colorSwiper.on('slideChange', function () {
-    let currentSlide = document.querySelectorAll('.color-swiper__slide')[colorSwiper.realIndex]
+    let currentSlide = document.querySelectorAll('.color-swiper__slide')[colorSwiper.realIndex+1]
     changeColorCar(currentSlide)
-
     changerActive(colorItem)
     colorItem[colorSwiper.realIndex].classList.add('active')
   });
@@ -1643,6 +1647,28 @@ if(document.querySelectorAll('.car').length) {
     }
   }
 }
+
+
+//смена цвета авто на странице кредит в форме
+if(document.querySelectorAll('.additionally__item-ads').length) {
+    // <!-- мобильный переключатель цвета авто -->
+    const colorSwiper = new Swiper('.color-swiper', {
+      slidesPerView: 1,
+      loop: true,
+      navigation: {
+        nextEl: '.color-swiper__next',
+        prevEl: '.color-swiper__prev',
+      },
+    })
+    let creditPic = document.querySelector('.additionally__item-pic')
+    let img =  creditPic.querySelector('img')
+    colorSwiper.on('slideChange', function () {
+      let currentSlide = document.querySelectorAll('.color-swiper__slide')[colorSwiper.realIndex+1]
+      let imgPath = currentSlide.dataset.img
+      img.setAttribute('src', imgPath)
+    });
+}
+
 
 // скролл до блока по клику на ticker-swiper__slide 
 if(document.querySelectorAll('.ticker-swiper__slide').length) {
@@ -1661,8 +1687,8 @@ if(document.querySelectorAll('.ticker-swiper__slide').length) {
   }
 }
 
-// открытие формы с номером телефона и фио
 
+// открытие формы с номером телефона и фио
 if(document.querySelectorAll('.open-default-form').length) {
   let btnDefault = document.querySelectorAll('.open-default-form')
   let defaultForm = document.querySelector('.popup-form-default')

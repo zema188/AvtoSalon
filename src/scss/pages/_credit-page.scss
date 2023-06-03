@@ -349,6 +349,10 @@
     &__item {
         margin-bottom: 15px;
         position: relative;
+        & .car-color-mobile {
+            opacity: 1;
+            pointer-events: all;
+        }
         cursor: pointer;
         &.active {
             & .additionally__item-content {
@@ -457,6 +461,7 @@
 
     }
     &__item-pic {
+        position: relative;
         @media(max-width:1023px) {
             max-width: 250px;
         }

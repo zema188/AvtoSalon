@@ -214,3 +214,9 @@
       margin-bottom: 35px;
     }
 }
+
+@media (max-width: 1023px) {
+  .header__phone-btn.btn_blue:hover {
+    background: none;
+  }
+}

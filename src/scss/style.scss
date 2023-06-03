@@ -641,6 +641,16 @@ h3 {
     margin-top: 26px;
   }
 }
+.popup-modal_down {
+  @media(max-width:539px) {
+    @include popup-down;
+  }
+  &__btn {
+    width: 100%;
+    padding: 16px 5px;
+    margin-top: 26px;
+  }
+}
 .irs--round {
   height: 2px;
 }

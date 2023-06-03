@@ -39,8 +39,7 @@
         }
         & .offers__card-btn {
             max-width: 178px;
-            margin-top: 23px;
-            padding: 15px 18px;
+            padding: 14px 18px;
             font-weight: 400;
             font-size: 18px;
             line-height: 21px;
@@ -82,6 +81,7 @@
         @media(max-width:1023px) {
             flex-wrap: wrap;
             justify-content: flex-start;
+            gap: 30px;
         }
         @media(min-width:890px) {
             border-radius: 5px;
@@ -110,6 +110,9 @@
         flex: 0 0 100%;
         max-width: 171px;
         height: fit-content;
+        @media(max-width:1023px) {
+            margin-right: 0px;
+        }
         @media(max-width:539px) {
             flex: 0 0 41%;
             margin-right: 0px;
@@ -147,6 +150,8 @@
     }
     &__card-info {
         display: flex;
+        height: auto;
+        align-items: center;
         flex: 1;
         max-width: 448px;
         gap: 27px;
@@ -218,7 +223,6 @@
 
     &__card-prices {
         font-family: 'Rubik';
-        padding-top: 22px;
         @media(max-width:539px) {
             padding-top: 0px;
         }
@@ -245,7 +249,6 @@
         line-height: 28px;
         color: #E82B2B;
         white-space: nowrap;
-        margin-top: 6px;
         @media(max-width:539px) {
             font-size: 18px;
             line-height: 21px;
@@ -259,7 +262,6 @@
         font-size: 20px;
         line-height: 24px;
         width: min-content;
-        padding-top: 22px;
         @media(max-width:539px) {
             font-weight: 300;
             font-size: 14px;
@@ -280,12 +282,12 @@
             font-size: 21px;
             line-height: 28px;
             white-space: nowrap;
-            margin-top: 6px;
             display: block;
             @media(max-width:539px) {
                 font-weight: 600;
                 font-size: 18px;
                 line-height: 21px;
+                margin-top: 0px;
             }
         }
     }
@@ -294,7 +296,6 @@
         width: 100%;
         max-width: 121px;
         border-radius: 3.58543px;
-        margin-top: 31px;
         padding: 11px 19px;
         @media(max-width:539px) {
             margin-top: 0px;

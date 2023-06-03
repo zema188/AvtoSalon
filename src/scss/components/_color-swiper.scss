@@ -1,13 +1,16 @@
 .car-color-mobile {
-    display: none;
     align-items: center;
     width: fit-content;
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 0px;
     gap: 7px;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
     @media(max-width:767px) {
-        display: flex;
+        opacity: 1;
+        pointer-events: all;
     }
 }
 .color-swiper {
@@ -17,7 +20,7 @@
             &::after {
                 content: "";
                 position: absolute;
-                left: -9px;
+                left: -14px;
                 top: -8px;
                 width: 30px;
                 height: 30px;

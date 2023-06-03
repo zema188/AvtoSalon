@@ -7,5 +7,17 @@
     margin-top: 15px;
 }
 .form-list {
-    padding-top: 40px;
+    padding-top: 20px;
+}
+.form-lead {
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #8d8d8d;
+    margin-top: 11px;
+    & a {
+        color: #8d8d8d;
+        text-decoration: underline;
+    }
 }
