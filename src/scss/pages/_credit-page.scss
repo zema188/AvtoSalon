@@ -349,11 +349,36 @@
     &__item {
         margin-bottom: 15px;
         position: relative;
-        & .car-color-mobile {
-            opacity: 1;
-            pointer-events: all;
-        }
         cursor: pointer;
+        & .car__color-list {
+            padding-top: 20px;
+            .car__color-item-w {
+                height: 20px;
+                @media(max-width:1023px) {
+                    height: 16px;
+                }
+            }
+            .car__color-item {
+                height: 10px;
+                width: 60px;
+                @media(max-width:767px) {
+                    width: 39px;
+                    height: 7px;
+                }
+                &.active {
+                    width: 75px;
+                    height: 15px;
+                    @media(max-width:1023px) {
+                        width: 70px;
+                        height: 15px;
+                    }
+                    @media(max-width:767px) {
+                        width: 62px;
+                        height: 11px;
+                    }
+                }
+            }
+        }
         &.active {
             & .additionally__item-content {
                 display: block;
@@ -462,6 +487,10 @@
     }
     &__item-pic {
         position: relative;
+        max-width: 319px;
+        @media(max-width:1199px) {
+            max-width: 350px;
+        }
         @media(max-width:1023px) {
             max-width: 250px;
         }

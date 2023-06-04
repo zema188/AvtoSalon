@@ -116,135 +116,12 @@ const previewSwiper = new Swiper('.preview-swiper', {
 })
 
 
-//benefit-swiper
-const benefitSwiper = new Swiper('.benefit-swiper', {
-    slidesPerView: 3,
-    speed: 400,
-    spaceBetween: 35,
-    allowTouchMove: true,
-    breakpoints: {
-        0: {
-          slidesPerView: 1.65,
-          spaceBetween: 8,
-        },
-        768: {
-          slidesPerView: 2.5,
-          spaceBetween: 8,
-        },
-        1024: {
-            slidesPerView: 3,
-        },
-    }
-})
-
-
-//benefit-swiper _____car
-const benefitSwiperCar = new Swiper('.benefit-swiper-car', {
-  slidesPerView: 2.2,
-  speed: 400,
-  pagination: {
-    el: '.benefit-swiper-car-pagination',
-    type: 'bullets',
-    clickable: true,
-  },
-  breakpoints: {
-      0: {
-        slidesPerView: 1.65,
-        spaceBetween: 8,
-      },
-      900: {
-        slidesPerView: 2.5,
-        spaceBetween: 8,
-      },
-      1024: {
-          slidesPerView: 2.25,
-          spaceBetween: 25,
-      },
-  }
-})
-
 //types-swiper
 const typesSwiper = new Swiper('.types-swiper', {
     slidesPerView: 3.5,
     speed: 400,
     spaceBetween: 15,
     // centeredSlides: true,
-})
-
-
-//offers__item-swiper
-const offersItemSwiper = new Swiper('.offers__item-swiper', {
-  slidesPerView: 1,
-  speed: 400,
-  spaceBetween: 10,
-  mousewheel: true,
-  pagination: {
-    el: '.offers__item-pagination',
-    type: 'bullets',
-    clickable: true,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1.42,
-      spaceBetween: 5,
-    },
-    360: {
-      slidesPerView: 1.42,
-      spaceBetween: 5,
-    },
-    450: {
-      slidesPerView: 1.82,
-      spaceBetween: 5,
-    },
-    540: {
-      slidesPerView: 2.5,
-    },
-    768: {
-      slidesPerView: 1,
-    },
-  }
-})
-// offers swiper 
-
-if(document.querySelectorAll('.offers__item-swiper').length) {
-  let swipers = document.querySelectorAll('.offers__item-swiper')
-  for(let i = 0; i < swipers.length; i++) {
-    addHoverMouseSwiper(swipers[i],i)
-  }
-
-  function addHoverMouseSwiper (swiper,index) {
-    let slides = swiper.querySelectorAll('.offers__item-slide')
-    width = swiper.offsetWidth / slides.length
-    let left = 0
-    for(let i = 0; i < slides.length; i++) {
-      let newDiv = document.createElement("i");
-      swiper.append(newDiv)
-      newDiv.style.width = width + 'px'
-      newDiv.style.left = width * i + 'px'
-      newDiv.addEventListener('mouseover', function() {
-        offersItemSwiper[index].slideTo(i, 400)
-      })
-    }
-  }
-}
-
-
-
-
-
-//card other 
-const otherSwiper = new Swiper('.other-swiper', {
-  slidesPerView: 3,
-  speed: 400,
-  spaceBetween: 10,
-  breakpoints: {
-    0: {
-      slidesPerView: 2.2
-    },
-    768: {
-      slidesPerView: 3,
-    },
-  }
 })
 
 
@@ -283,36 +160,6 @@ const partnersSwiper = new Swiper('.partners-swiper', {
     },
   }
 })
-
-
-//parnters swiper 
-const characteristicsSwiper = new Swiper('.characteristics-swiper', {
-  speed: 400,
-  breakpoints: {
-    0: {
-      slidesPerView: 'auto',
-      spaceBetween: 5,
-    },
-    768: {
-      slidesPerView: 'auto',
-      spaceBetween: 18,
-    },
-  }
-})
-
-
-//car page  car__equipment-item 
-let carEquipmentItem = document.querySelectorAll('.car__equipment-item-subtitle')
-if(carEquipmentItem.length) {
-  for(let i = 0; i<carEquipmentItem.length; i++) {
-    carEquipmentItem[i].addEventListener("click", function() {
-      let parent = carEquipmentItem[i].closest('.car__equipment-item')
-      parent.classList.toggle('active')
-    })
-  } 
-}
-
-
 
 
 if(document.querySelectorAll('.credit__form').length) {
@@ -443,64 +290,6 @@ function calc() {
 
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-}
-
-
-
-
-
-//car-swiper
-let carSwiper = new Swiper(".car-swiper", {
-  spaceBetween: 10,
-  slidesPerView: 1,
-  initialSlide: 0,
-  navigation: {
-    nextEl: ".car-swiper__next",
-    prevEl: ".car-swiper__prev",
-  },
-  pagination: {
-    el: '.car-swiper__pagination',
-    type: 'fraction',
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1.01
-    },
-    768: {
-      slidesPerView: 1,
-    },
-  }
-});
-
-
-
-
-//car page текст на последнем фото 
-
-if(document.querySelectorAll('.car__slider ').length) {
-
-  let slider = document.querySelector('.car__slider')
-  let quantity = slider.querySelectorAll('.car-swiper__slide')
-  let thumbSlide = document.querySelectorAll('.car-swiper-thumb__slide')
-
-  let block = `<span>+ еще ${quantity.length - thumbSlide.length} фото</span>`
-  thumbSlide[thumbSlide.length-1].classList.add('notZoom')
-  thumbSlide[thumbSlide.length-1].innerHTML+= block
-
-
-
-// смена фото при наведении 
-
-  for(let i = 0; i < thumbSlide.length; i++) {
-    thumbSlide[i].addEventListener('mouseover', function() {
-      if(!this.classList.contains('notZoom')) {
-        carSwiper.slideTo(i, 400)
-      }
-    })
-  }
-
-
-
 }
 
 //gallery swiper
@@ -1339,54 +1128,6 @@ if(document.querySelectorAll('.car__discount-btn_mob').length) {
 });
 
 
-//offers__header-filter-list
-if(document.querySelectorAll('.offers__header-filter-list').length) {
-  let btnOpenFilterOfferList = document.querySelector('.offers__header-filter-title')
-  let offersFilterList = document.querySelector('.offers__header-filter-list')
-  let selector = offersFilterList.querySelectorAll('.offers__header-filter-item')
-  $( btnOpenFilterOfferList ).on( "click", function() {
-    $( offersFilterList ).slideToggle( "slow", function() {
-      // Animation complete.
-    });
-  });
-  offersFilterList.addEventListener('click', function(e) {
-    let target = e.target
-    if(target.classList.contains('offers__header-filter-item')) {
-      btnOpenFilterOfferList.innerHTML = e.target.innerHTML
-      changerActive(selector)
-      target.classList.add('active')
-
-    }
-  })
-}
-
-
-
-//раскрытие формы обменять на мой авто  на странице car 
-if(document.querySelectorAll('.possibilities_trade').length) {
-  let possibilitiesTrade = document.querySelector('.possibilities_trade')
-  possibilitiesTrade.onclick = function() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-        possibilitiesCredit.classList.add('show')
-        possibilitiesTrade.classList.remove('show')
-        $('.trade-form').slideToggle(400);
-        $('.credit_car').slideUp(400);
-
-  }
-//раскрытие формы с калькулятором на странице car
-  let possibilitiesCredit = document.querySelector('.possibilities_credit')
-  possibilitiesCredit.onclick = function() {
-        $('.trade-form').slideUp(400);
-        $('.credit_car').slideToggle(400);
-        possibilitiesCredit.classList.remove('show')
-        possibilitiesTrade.classList.add('show')
-  }
-}
-
-
 //mobile year swiper
 const yearSwiper = new Swiper('.mobile-year__swiper', {
   slidesPerView: 7,
@@ -1447,29 +1188,6 @@ if(document.querySelectorAll('.footer__dics-more-btn').length) {
     $('.footer__dics-hidden').slideToggle(400);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -1562,67 +1280,25 @@ if(document.querySelectorAll('.dropdown-block ').length) {
 
   }
 }
+$(function () {
+  // смена цвета машины 
+if(document.querySelector('.car__color-list') !== null) {
 
-
-// смена цвета машины по клику
-if(document.querySelectorAll('.car').length) {
-  let carBlock = document.querySelector('.car')
-  let colorList = carBlock.querySelector('.car__color-list')
-  let colorItem = colorList.querySelectorAll('.car__color-item')
-
-  colorList.addEventListener('click', function(e) {
-
-    let target = e.target
-    if(target.classList.contains('car__color-item')) {
-      changeColorCar(target)
-      changerActive(colorItem)
-      target.classList.add('active')
-
-      changeColorSwiperSlide(target)
-    }
-
-  }) 
-
-  function changeColorCar(colorItem) {
-    let name = colorItem.dataset.name
-    let imgPath = colorItem.dataset.img
-    // где будем менять путь картинки
-    let img =  carBlock.querySelector('.car__preview-pic').querySelector('img')
-    img.setAttribute('src', imgPath)
-
-    // где будем название цвета
-    let namePath =  carBlock.querySelector('.car__color-name').querySelector('a')
-    namePath.innerHTML = name
-
-    // страница объявления смена картинки в кредитном калькуляторе 
-    if(document.querySelectorAll('.credit__info-pic').length) {
-      let creditPic = document.querySelector('.credit__info-pic')
-      let img =  creditPic.querySelector('img')
-      img.setAttribute('src', imgPath)
-    }
-
-
-  }
-  createColorSwiperSlides()
   //делаем color-swiper__slide
-  function createColorSwiperSlides() {
-    let colorSwiperWrapper = document.querySelector('.color-swiper__wrapper')
-    let colors = document.querySelectorAll('.car__color-item')
+  let colors = document.querySelectorAll('.car__color-item')
+  let colorSwiperWrapper = document.querySelector('.color-swiper__wrapper')
 
-    for(let i = 0; i < colors.length; i++) {
-      let name = colors[i].dataset.name
-      let imgPath = colors[i].dataset.img
-      let color = window.getComputedStyle(colors[i]).backgroundColor
-      let slide = 
-      `<div class="color-swiper__slide swiper-slide" data-name="${name}" data-img=${imgPath}>
-        <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" d="M3.5 8.47995V11C3.5 12.3903 4.09111 13.6702 5.08325 14.6876C5.01299 14.6332 4.9466 14.5718 4.88507 14.5035L0.385072 9.50346C-0.169117 8.88769 -0.119199 7.93926 0.496566 7.38507C1.11233 6.83088 2.06077 6.8808 2.61495 7.49657L3.5 8.47995Z" fill="${color}"/>
-          <path d="M11.5 2.5V4C11.5 4.27614 11.2761 4.5 11 4.5C10.7239 4.5 10.5 4.27614 10.5 4V1.5C10.5 0.671573 9.82843 0 9 0C8.17157 0 7.5 0.671573 7.5 1.5V4C7.5 4.27614 7.27614 4.5 7 4.5C6.72386 4.5 6.5 4.27614 6.5 4V3C6.5 2.17157 5.82843 1.5 5 1.5C4.17157 1.5 3.5 2.17157 3.5 3V11C3.5 14.3137 6.85786 17 11 17C15.1421 17 18.5 14.3137 18.5 11V4.5C18.5 3.67157 17.8284 3 17 3C16.3435 3 15.7855 3.42173 15.5822 4.00905C15.4918 4.27 15.2761 4.5 15 4.5C14.7239 4.5 14.5 4.27614 14.5 4V2.5C14.5 1.67157 13.8284 1 13 1C12.1716 1 11.5 1.67157 11.5 2.5Z" fill="${color}" />
-        </svg>
-      </div>`
-      colorSwiperWrapper.innerHTML += slide
-    }
+  for(let i = 0; i < colors.length; i++) {
+    createColorSwiperSlides(colors[i],colorSwiperWrapper)
   }
+
+  //делаем car-swiper__slide
+  let carSwiperWrapper = document.querySelector('.car__preview-swiper-wrapper')
+
+  for(let i = 0; i < colors.length; i++) {
+    createCarSwiperSlides(colors[i],carSwiperWrapper)
+  }
+
   // <!-- мобильный переключатель цвета авто -->
   const colorSwiper = new Swiper('.color-swiper', {
     slidesPerView: 1,
@@ -1632,12 +1308,74 @@ if(document.querySelectorAll('.car').length) {
       prevEl: '.color-swiper__prev',
     },
   })
+
+  // события смена слайда мобильного 
   colorSwiper.on('slideChange', function () {
     let currentSlide = document.querySelectorAll('.color-swiper__slide')[colorSwiper.realIndex+1]
-    changeColorCar(currentSlide)
+    CarSwiper.slideTo(colorSwiper.realIndex+1)
     changerActive(colorItem)
     colorItem[colorSwiper.realIndex].classList.add('active')
+
+    //меняем название заголовка цвета
+    let titleColorName = document.querySelector('.car__color-name')
+    if(titleColorName !== null) {
+      let titleBlock = titleColorName.querySelector('a')
+      changeTextTitleColor(currentSlide,titleBlock)
+    }
   });
+
+  // <!-- слайдер с машинами -->
+  const CarSwiper = new Swiper('.car__preview-swiper', {
+    slidesPerView: 1,
+    loop: true,
+  })
+
+  // события смена слайда машин 
+  CarSwiper.on('slideChange', function () {
+    colorSwiper.slideTo(CarSwiper.realIndex+1)
+  });
+
+  //смена цвета по клику на плитку цвета
+  let colorList = document.querySelector('.car__color-list')
+  let colorItem = document.querySelectorAll('.car__color-item')
+  colorList.addEventListener('click', function(e) {
+    let target = e.target
+    if(target.classList.contains('car__color-item')) {
+      changerActive(colorItem)
+      target.classList.add('active')
+      changeColorSwiperSlide(target)
+    }
+
+  })
+
+  //функция создания слайда для мобильного слайдера
+  function createColorSwiperSlides(colorItem, swiperWrapper) {
+
+    let name = colorItem.dataset.name
+    let imgPath = colorItem.dataset.img
+    let color = window.getComputedStyle(colorItem).backgroundColor
+    let slide = 
+    `<div class="color-swiper__slide swiper-slide" data-name="${name}" data-img=${imgPath}>
+      <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" d="M3.5 8.47995V11C3.5 12.3903 4.09111 13.6702 5.08325 14.6876C5.01299 14.6332 4.9466 14.5718 4.88507 14.5035L0.385072 9.50346C-0.169117 8.88769 -0.119199 7.93926 0.496566 7.38507C1.11233 6.83088 2.06077 6.8808 2.61495 7.49657L3.5 8.47995Z" fill="${color}"/>
+        <path d="M11.5 2.5V4C11.5 4.27614 11.2761 4.5 11 4.5C10.7239 4.5 10.5 4.27614 10.5 4V1.5C10.5 0.671573 9.82843 0 9 0C8.17157 0 7.5 0.671573 7.5 1.5V4C7.5 4.27614 7.27614 4.5 7 4.5C6.72386 4.5 6.5 4.27614 6.5 4V3C6.5 2.17157 5.82843 1.5 5 1.5C4.17157 1.5 3.5 2.17157 3.5 3V11C3.5 14.3137 6.85786 17 11 17C15.1421 17 18.5 14.3137 18.5 11V4.5C18.5 3.67157 17.8284 3 17 3C16.3435 3 15.7855 3.42173 15.5822 4.00905C15.4918 4.27 15.2761 4.5 15 4.5C14.7239 4.5 14.5 4.27614 14.5 4V2.5C14.5 1.67157 13.8284 1 13 1C12.1716 1 11.5 1.67157 11.5 2.5Z" fill="${color}" />
+      </svg>
+    </div>`
+    swiperWrapper.innerHTML += slide
+  }
+
+  //функция создания слайда с фоткой машины
+  function createCarSwiperSlides(colorItem, swiperWrapper) {
+
+    let imgPath = colorItem.dataset.img
+    let slide = 
+    `<div class="car__preview_slide swiper-slide">
+      <img src="${imgPath}" alt="car">
+    </div>`
+    swiperWrapper.innerHTML += slide
+  }
+
+  //функция смена цвета по клику на плитку цвета
   function changeColorSwiperSlide(colorItem) {
     let name = colorItem.dataset.name
     let slides = document.querySelectorAll('.color-swiper__slide')
@@ -1646,28 +1384,15 @@ if(document.querySelectorAll('.car').length) {
         colorSwiper.slideTo(i)
     }
   }
+
+  //функция смены название цвета в заголовке с названием цвета
+  function changeTextTitleColor(coloroItem, titleBlock) {
+    titleBlock.innerHTML = coloroItem.dataset.name
+  }
 }
 
+});
 
-//смена цвета авто на странице кредит в форме
-if(document.querySelectorAll('.additionally__item-ads').length) {
-    // <!-- мобильный переключатель цвета авто -->
-    const colorSwiper = new Swiper('.color-swiper', {
-      slidesPerView: 1,
-      loop: true,
-      navigation: {
-        nextEl: '.color-swiper__next',
-        prevEl: '.color-swiper__prev',
-      },
-    })
-    let creditPic = document.querySelector('.additionally__item-pic')
-    let img =  creditPic.querySelector('img')
-    colorSwiper.on('slideChange', function () {
-      let currentSlide = document.querySelectorAll('.color-swiper__slide')[colorSwiper.realIndex+1]
-      let imgPath = currentSlide.dataset.img
-      img.setAttribute('src', imgPath)
-    });
-}
 
 
 // скролл до блока по клику на ticker-swiper__slide 
